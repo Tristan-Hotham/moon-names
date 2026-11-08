@@ -1,0 +1,11 @@
+fid,feature,action,wikidata_value,place,plon,plat,pkind,reason
+Q14597090,Arima,move,Trinidad (island),Arima,-61.283,10.633,town or village,The crater is named after the town of Arima; Wikidata links the island of Trinidad.
+Q24065460,Artik,move,Armenia (country),Artik,43.967,40.617,town or village,The crater is named after the town of Artik; Wikidata links the country.
+Q1341055,Endurance,drop,Endurance (ship; wreck site),,,,,"Named after Shackleton's ship, not a place on Earth."
+Q812905,Beagle,drop,HMS Beagle (ship; wreck site),,,,,"Named after Darwin's ship, not a place on Earth."
+Q559463,Beagle 2,drop,HMS Beagle (ship; wreck site),,,,,"Named after a ship, not a place on Earth."
+Q1340318,Endeavour,drop,Space Shuttle Endeavour,,,,,"Linked to a spacecraft, not a place on Earth."
+Q2026958,Fram,drop,Fram (ship),,,,,"Named after Nansen's ship, not a place on Earth."
+Q136547952,Tokmok,drop,duplicate Wikidata item of the crater Tokmok,,,,,"Second Wikidata item for the same crater (Q135918747), without coordinates; dropped to avoid double counting."
+Q24065461,Asau,drop,Tuvalu (country),,,,,"Linked to a country; the town meant (Asau in Tuvalu or in Samoa) could not be confirmed, so it is not mapped."
+Q116051537,(no English label),rename,Q1001581 (no English label),"Village in Euboea (Q1001581, no English label)",,,,No English label in the extract for the feature or the place.

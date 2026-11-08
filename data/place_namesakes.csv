@@ -1,0 +1,320 @@
+fid,feature,body,nid,place,plon,plat,country,iso3,continent,wd_country,pkind,types
+Q1028774,Rupes Altai,moon,Q5955,Altai Mountains,89.0,49.0,Mongolia,MNG,Asia,Kazakhstan; Mongolia; People's Republic of China; Russia,mountain or island,geodiversity; mountain range; non-geologically related mountain range
+Q1033648,Canso,mars,Q2936541,Canso,-60.995278,45.333889,Canada,,,Canada,town or village,community; former town
+Q10348394,Penticton,mars,Q935519,Penticton,-119.588611,49.491111,Canada,CAN,North America,Canada,town or village,city in British Columbia
+Q106617733,Kozova crater,mars,Q1475951,Kozova,25.154414,49.431834,Ukraine,UKR,Europe,Austrian Empire; Austria–Hungary; Ukraine,town or village,human settlement; urban-type settlement in Ukraine
+Q107017734,Mount Heng,moon,Q644965,Mount Heng,112.684722,27.301667,China,CHN,Asia,People's Republic of China,mountain or island,Chinese AAAAA-rated tourist attraction; mountain
+Q107017744,Mount Hua,moon,Q112568,Mount Hua,110.083333,34.483333,China,CHN,Asia,People's Republic of China,mountain or island,Chinese AAAAA-rated tourist attraction; mountain range
+Q108321415,Piscinas crater,mars,Q286625,Piscinas,8.666046,39.07446,Italy,ITA,Europe,Italy,town or village,comune of Italy
+Q1087678,Tempe Terra,mars,Q258540,Vale of Tempe,22.546667,39.872778,Greece,GRC,Europe,Greece,water or valley,valley
+Q109303047,Mastung crater,mars,Q2592655,Mastung,66.846944,29.798611,Pakistan,PAK,Asia,Pakistan,town or village,city; human settlement
+Q110322807,Karratha,mars,Q1309107,Karratha,116.846,-20.7364,Australia,AUS,Oceania,Australia,town or village,town
+Q110322811,Dampier,mars,Q1158897,Dampier,116.71,-20.66,Australia,AUS,Oceania,Australia,town or village,town
+Q1108951,Athabasca Valles,mars,Q2216,Athabasca River,-110.83517,58.66696,Canada,CAN,North America,Canada,water or valley,Canadian Heritage Rivers System; river
+Q1144595,Victoria,mars,Q3940,Victoria,55.454444,-4.623611,Seychelles,SYC,Seven seas (open ocean),Seychelles,town or village,city
+Q116051523,Amed,mars,Q18209257,Amed,115.65,-8.33333,Indonesia,IDN,Asia,Indonesia,district or region,region
+Q116051524,Arvi,mars,Q1935271,Arvi,79.14,20.59,India,IND,Asia,India,town or village,human settlement
+Q116051525,Bari,mars,Q707848,Bari,77.62,26.63,India,IND,Asia,India,town or village,city
+Q116051528,Elva,mars,Q213071,Elva,26.415833,58.2275,Estonia,EST,Europe,Estonia,town or village,city
+Q116051529,Enns,mars,Q260089,Enns,14.475,48.216667,Austria,AUT,Europe,Austria,town or village,municipality of Austria; place with town rights and privileges
+Q116051530,Gebog,mars,Q24966647,Gebog,110.844444,-6.735,Indonesia,IDN,Asia,Indonesia,town or village,human settlement
+Q116051531,Güímar,mars,Q983433,Güímar,-16.40995,28.315019,Spain,ESP,Europe,Spain,town or village,municipality of Spain
+Q116051532,Jintur,mars,Q2444446,Jintur,76.7,19.62,India,IND,Asia,India,town or village,human settlement
+Q116051533,Kai,mars,Q577309,Kai,138.515778,35.660805,Japan,JPN,Asia,Japan,town or village,city of Japan
+Q116051536,Kyela,mars,Q35706403,Kyela,33.85,-9.583333,Tanzania,TZA,Africa,Tanzania,town or village,human settlement
+Q116051537,"Village in Euboea (Q1001581, no English label)",mars,Q1001581,"Village in Euboea (Q1001581, no English label)",23.32,38.77,Greece,GRC,Europe,Greece,town or village,human settlement
+Q116051539,Maur Mandi,mars,Q3852404,Maur Mandi,75.25,30.08,India,IND,Asia,India,town or village,village in India
+Q116051541,Mirissa,mars,Q1345652,Mirissa,80.459765,5.945607,Sri Lanka,,,Sri Lanka,town or village,human settlement
+Q116051543,Poso,mars,Q12492354,Poso,120.7624,-1.37859,Indonesia,IDN,Asia,Indonesia,town or village,capital of regency
+Q116051544,Satkania Upazila,mars,Q7342161,Satkania Upazila,92.085,22.088333,Bangladesh,BGD,Asia,Bangladesh,district or region,upazila of Bangladesh
+Q116051545,Steyr,mars,Q260320,Steyr,14.416667,48.05,Austria,AUT,Europe,Austria,town or village,district of Austria; municipality of Austria; place with town rights and privileges; statutory city of Austria
+Q116051546,Tairua,mars,Q2388791,Tairua,175.848889,-37.006389,New Zealand,NZL,Oceania,New Zealand,town or village,locality
+Q116051548,Teknaf Upazila,mars,Q3348523,Teknaf Upazila,92.3,20.8667,Bangladesh,,,Bangladesh,district or region,upazila of Bangladesh
+Q116051549,Wukan,mars,Q8039132,Wukan,115.663889,22.890278,People's Republic of China,,,People's Republic of China,town or village,human settlement; village of the People's Republic of China
+Q116051550,Yaiza,mars,Q2323549,Yaiza,-13.766667,28.955,Spain,ESP,Europe,Spain,town or village,municipality of Spain
+Q116051551,Zhufan,mars,Q8477601,Zhufan,114.766667,31.95,China,CHN,Asia,People's Republic of China,district or region,county of China; former administrative territorial entity
+Q116186019,Nen River,mars,Q866875,Nen River,124.6572,45.4381,China,CHN,Asia,People's Republic of China,water or valley,river
+Q116189052,Acadia,mercury,Q5014257,Acadia,-63.569944,44.647917,Canada,,,Canada,district or region,preserved watercraft; ship
+Q116189064,Endurance,mercury,Q911858,Endurance,-52.444,-68.698,,,,,other place,barquentine; shipwreck
+Q116194013,Marsabit,mars,Q1709128,Marsabit,37.983333,2.333333,Kenya,KEN,Africa,Kenya,town or village,city
+Q116194014,Tangtse,mars,Q24909881,Tangtse,78.16773,34.03015,India,IND,Asia,India,town or village,village in India
+Q11832039,Pulawy,mars,Q320007,Puławy,21.96939,51.41655,Poland,POL,Europe,Poland,town or village,urban municipality of Poland
+Q1186879,Albi,mars,Q132801,Albi,2.145833,43.928056,France,FRA,Europe,France,town or village,commune of France
+Q1186897,Aki,mars,Q417825,Aki,133.906111,33.516389,Japan,JPN,Asia,Japan,town or village,city of Japan; second-level administrative division
+Q1186903,Aniak,mars,Q79540,Aniak,-159.52222,61.57833,United States,USA,North America,United States,town or village,city in the United States
+Q1186922,Amsterdam,mars,Q727,Amsterdam,4.883333,52.366667,Netherlands,NLD,Europe,Netherlands,town or village,big city; cadastral populated place in the Netherlands; city; cycling city
+Q1186929,Ada,mars,Q345921,Ada,-96.668333,34.763611,United States,USA,North America,United States,water or valley,administrative territorial entity; city in the United States; county seat
+Q1186950,Arica,mars,Q4790286,Arica,-71.733333,-2.133333,Colombia,COL,South America,Colombia,town or village,human settlement
+Q1186960,Aban,mars,Q305352,Aban,96.061111,56.677778,Russia,RUS,Europe,Russia,town or village,posyolok; urban-type settlement
+Q1186965,Apt,mars,Q207632,Apt,5.396389,43.876111,France,FRA,Europe,France,town or village,commune of France
+Q1187124,Aveiro,mars,Q485581,Aveiro,-8.655278,40.638889,Portugal,PRT,Europe,Portugal,town or village,municipality of Portugal
+Q1187130,Achar,mars,Q984944,Achar,-56.1825,-32.4075,Uruguay,URY,South America,Uruguay,town or village,town
+Q1187156,Alitus,mars,Q450625,Alytus,24.05,54.4,Lithuania,LTU,Europe,Lithuania,town or village,city
+Q1187435,Aktaj,mars,Q4089127,,47.284025,55.851486,Russia,RUS,Europe,Russia,town or village,rural settlement in Russia
+Q1187459,Ajon,mars,Q748868,Ayon,167.994445,69.936667,Russia,RUS,Europe,Russia,town or village,Village
+Q1187595,Azul,mars,Q54118,Azul,-59.85,-36.783333,Argentina,ARG,South America,Argentina,town or village,city of Argentina
+Q12038609,Morava Valles,mars,Q179251,Morava,16.940149,48.61619,Czech Republic,CZE,Europe,Austria; Czech Republic; Slovakia,water or valley,river
+Q1279811,Eberswalde,mars,Q9306,Eberswalde,13.833056,52.833056,Germany,DEU,Europe,Germany,town or village,district capital; large district town; urban municipality in Germany
+Q133458975,Kahnawake,mars,Q1014394,Kahnawake,-73.6833,45.4167,Canada,CAN,North America,Canada,district or region,indian reserve in Quebec
+Q133458979,Longwood,mars,Q222213,Longwood,-5.686389,-15.945833,Saint Helena,SHN,Seven seas (open ocean),"Saint Helena, Ascension and Tristan da Cunha",district or region,district
+Q133458999,Taung,mars,Q2096879,Taung,24.748055,-27.5625,South Africa,ZAF,Africa,South Africa,town or village,town
+Q133459072,Hilsa,mars,Q2734910,Hilsa,85.28,25.32,India,IND,Asia,India,town or village,town
+Q133459502,Idah,mars,Q3048500,Idah,6.715278,7.081389,Nigeria,NGA,Africa,Nigeria,town or village,local government area of Nigeria; town
+Q133459518,Lendringsen,mars,Q1574886,Lendringsen,8.1275,51.5333,Germany,DEU,Europe,Germany,district or region,Ortsteil
+Q133459724,Moyo Town,mars,Q992016,Moyo Town,31.75,3.633333,Uganda,UGA,Africa,Uganda,town or village,human settlement
+Q133460170,Tupã,mars,Q961143,Tupã,-50.513889,-21.935,Brazil,BRA,South America,Brazil,town or village,municipality of Brazil; tourist resort
+Q133460256,Sidhi,mars,Q2483850,Sidhi,81.88,24.42,India,IND,Asia,India,town or village,human settlement
+Q133521696,Mount Song,moon,Q1140980,Mount Song,112.960278,34.484722,China,CHN,Asia,People's Republic of China,mountain or island,Chinese AAAAA-rated tourist attraction; mountain
+Q133523051,Jhelum River,mars,Q214874,Jhelum River,72.15,31.17,Pakistan,PAK,Asia,India; Pakistan,water or valley,river
+Q133609519,Sakarya River,mars,Q217466,Sakarya River,31.058789,39.352846,Turkey,TUR,Asia,Turkey,water or valley,river
+Q133697849,Pai,mars,Q2892289,Pai,98.436884,19.359324,Thailand,THA,Asia,Thailand,town or village,Sukhaphiban; subdistrict municipality
+Q133697861,Qaqortoq,mars,Q221203,Qaqortoq,-46.033333,60.716667,Greenland,,,Greenland,town or village,human settlement
+Q134485703,Hala,mars,Q3250492,Hala,68.43,25.81,Pakistan,PAK,Asia,Pakistan,town or village,city
+Q135918747,Tokmok,mars,Q854333,Tokmok,75.291,42.839,Kyrgyzstan,KGZ,Asia,Kyrgyzstan,town or village,border city; city
+Q136385502,Babati,mars,Q276746,Babati,35.7475,-4.211667,Tanzania,TZA,Africa,Tanzania,town or village,city; human settlement
+Q137010493,Periyar River,mars,Q2634049,Periyar River,77.258139,9.285417,India,IND,Asia,India,water or valley,river
+Q137010716,Bekal,mars,Q4881580,Bekal,75.0231,12.4204,India,IND,Asia,India,town or village,town
+Q137010769,Thumba,mars,Q1522917,Thumba,76.875038,8.531138,India,IND,Asia,India,district or region,neighborhood
+Q137010791,Varkala,mars,Q1012951,Varkala,76.716944,8.733056,India,IND,Asia,India,town or village,human settlement; town
+Q137208981,Blenheim,mars,Q883831,Blenheim,173.95,-41.516667,New Zealand,NZL,Oceania,New Zealand,town or village,borough; town
+Q138639422,Ouarzazate,mars,Q505208,Ouarzazate,-6.916667,30.916667,Morocco,MAR,Africa,Morocco,town or village,town; urban commune of Morocco
+Q138639657,Secunda,mars,Q2110377,Secunda,29.166667,-26.55,South Africa,ZAF,Africa,South Africa,town or village,town
+Q139846326,Belén,mars,Q934213,Belén,-67.033333,-27.65,Argentina,ARG,South America,Argentina,town or village,human settlement; municipality
+Q141147700,Kangar,mars,Q921155,Kangar,100.2,6.433333,Malaysia,MYS,Asia,Malaysia,town or village,capital city; town
+Q141147710,Satun,mars,Q1365666,Satun,100.068056,6.614722,Thailand,THA,Asia,Thailand,town or village,border city; thesaban mueang
+Q141174453,Pals,mars,Q13493,Pals,3.15,41.971667,Spain,ESP,Europe,Spain,town or village,municipality of Catalonia
+Q14597090,Arima,mars,Q128323,Arima,-61.283,10.633,Trinidad and Tobago,TTO,North America,Trinidad and Tobago,town or village,town (override)
+Q14600274,Bland,mars,Q959852,Bland,-91.6342,38.3025,United States,USA,North America,United States,town or village,city in the United States
+Q14600304,Boulia,mars,Q895092,Boulia,139.9,-22.9,Australia,AUS,Oceania,Australia,town or village,town
+Q14600367,Cairns,mars,Q189133,Cairns,145.775278,-16.925556,Australia,,,Australia,town or village,big city; city
+Q14600369,Camiling,mars,Q56424,Camiling,120.413056,15.686667,Philippines,PHL,Asia,Philippines,town or village,municipality of the Philippines
+Q14600391,Cangwu,mars,Q1033232,Cangwu County,111.25,23.75,China,CHN,Asia,People's Republic of China,district or region,county of China
+Q14600438,Chom,mars,Q1028172,Yadong County,88.907032,27.484822,China,CHN,Asia,People's Republic of China,district or region,county of China
+Q1517115,Yuty,mars,Q2475423,Yuty,-56.25,-26.62,Paraguay,PRY,South America,Paraguay,town or village,human settlement; municipality of Paraguay; town
+Q1530968,Glenelg,mars,Q260405,Glenelg,-5.624,57.212,United Kingdom,GBR,Europe,United Kingdom,town or village,human settlement
+Q1578397,Calahorra,mars,Q642046,Calahorra,-1.964722,42.303333,Spain,ESP,Europe,Spain,town or village,municipality of La Rioja
+Q16010877,Niobe Planitia,venus,Q213621,Niobe,27.424095,38.605282,Turkey,TUR,Asia,Turkey,other place,mythological Greek character
+Q17111659,Tarsus,mars,Q134287,Tarsus,34.9,36.916667,Turkey,TUR,Asia,Turkey,town or village,big city; city; municipality; town
+Q195342,Montes Cordillera,moon,Q605761,American Cordillera,-72.0,-16.0,Peru,PER,South America,Bolivia; Canada; Chile; Colombia; Costa Rica; Ecuador; El Salvador; Guatemala; Honduras; Mexico; Nicaragua; Panama; Peru; United States; Venezuela,mountain or island,non-geologically related mountain range
+Q19597273,Gasa,mars,Q2079109,Gasa,89.729708,27.906558,Bhutan,BTN,Asia,Bhutan,town or village,human settlement
+Q22976936,Crotone (crater),mars,Q6681,Crotone,17.116667,39.083333,Italy,ITA,Europe,Italy,town or village,city; comune of Italy
+Q2352518,Tugaske,mars,Q2205040,Tugaske,-106.287,50.875,Canada,CAN,North America,Canada,town or village,village in Saskatchewan
+Q24033713,Bashkaus Valles,mars,Q809798,Bashkaus,89.1925,50.209722,Russia,RUS,Europe,Russia,water or valley,river
+Q24064298,Sinai,mars,Q36755,Sinai Peninsula,34.0,29.5,Egypt,EGY,Africa,Egypt,other place,desert; peninsula
+Q24064845,Cruz crater,mars,Q379509,Puerto La Cruz,-64.616667,10.216667,Venezuela,VEN,South America,Venezuela,town or village,big city; city
+Q24064849,Daet,mars,Q356655,Daet,122.956389,14.114167,Philippines,PHL,Asia,Philippines,town or village,municipality of the Philippines
+Q24064876,Dunhuang,mars,Q319114,Dunhuang,94.663889,40.141111,China,CHN,Asia,People's Republic of China,town or village,county-level city of China
+Q24064906,Foros,mars,Q1437932,Foros,33.788889,44.391667,Russia,,,Russia; Ukraine,town or village,urban-type settlement in Russia; urban-type settlement in Ukraine
+Q24064914,Gali,mars,Q236673,Gali,41.736944,42.6275,Georgia,GEO,Asia,Georgia; Republic of Abkhazia,town or village,city
+Q24064917,Gamboa,mars,Q5519723,Gamboa,-79.7,9.116667,Panama,PAN,North America,Panama,town or village,human settlement
+Q24064924,Glazov,mars,Q134433,Glazov,52.65,58.133333,Russia,RUS,Europe,Russia,town or village,city or town; city/town in Russia
+Q24064929,Gol,mars,Q493301,Gol Municipality,8.984719,60.75028,Norway,NOR,Europe,Norway,town or village,municipality of Norway; organization
+Q24064948,Hamelin,mars,Q4062,Hamelin,9.36,52.103056,Germany,DEU,Europe,Germany,water or valley,Einheitsgemeinde of Lower Saxony; Hanseatic city; district capital; large independent city of Lower Saxony
+Q24064949,Handlová,mars,Q842011,Handlová,18.761944,48.727222,Slovakia,SVK,Europe,Slovakia,town or village,municipality of Slovakia; town
+Q24064962,Hope,mars,Q1610654,Hope,-121.441944,49.385833,Canada,CAN,North America,Canada,town or village,district municipality
+Q24064969,Inta,mars,Q142996,Inta,60.131519,66.039814,Russia,RUS,Europe,Russia,town or village,administrative divisions of Russia; city or town
+Q24064988,Kalocsa,mars,Q679249,Kalocsa,18.985556,46.533333,Hungary,HUN,Europe,Hungary,town or village,town in Hungary
+Q24064993,Kantang,mars,Q13025348,Kantang,99.515,7.4067,Thailand,THA,Asia,Thailand,town or village,subdistrict municipality; thesaban mueang
+Q24064997,Karzok,mars,Q25247383,Korzok,78.263989,32.968125,India,IND,Asia,India,town or village,human settlement
+Q24065007,Kin,mars,Q1350738,Kin,127.926,26.456167,Japan,JPN,Asia,Japan,town or village,town of Japan
+Q24065029,Lachute,mars,Q142250,Lachute,-74.333333,45.65,Canada,CAN,North America,Canada,town or village,city or town of Quebec
+Q24065031,Lagarto,mars,Q2288052,Lagarto,-37.65,-10.916945,Brazil,BRA,South America,Brazil,town or village,big city; municipality of Brazil
+Q24065036,Land,mars,Q111367902,Land,-88.32826,32.02868,United States,USA,North America,United States,town or village,hamlet
+Q24065048,Libertad,mars,Q2530307,Municipio Libertad,-64.514444,9.763333,Venezuela,VEN,South America,Venezuela,town or village,municipality of Venezuela
+Q24065073,Lutsk,mars,Q7550,Lutsk,25.324444,50.747778,Ukraine,UKR,Europe,Ukraine,town or village,Royal city in Polish-Lithuanian Commonwealth; big city; city of regional significance of Ukraine; city or town
+Q24065080,Magadi,mars,Q2237425,Magadi,77.2231,12.957,India,IND,Asia,India,town or village,human settlement
+Q24065082,Magong,mars,Q701428,Magong City,119.586389,23.565278,Taiwan,TWN,Asia,Taiwan,town or village,county-administered city
+Q24065083,Maidstone,mars,Q213180,Maidstone,0.529444,51.271667,United Kingdom,GBR,Europe,United Kingdom,town or village,county town; market town; unparished area
+Q24065092,Mari,mars,Q244762,Mari,40.89,34.549444,Syria,SYR,Asia,Syria,town or village,ancient civilization; archaeological site; city-state; tell
+Q24065114,Moanda,mars,Q1015100,Moanda,13.2,-1.566667,Gabon,GAB,Africa,Gabon,town or village,human settlement
+Q24065144,Noord,mars,Q2656618,Noord,-70.031667,12.563333,Aruba,ABW,North America,Aruba,town or village,human settlement; region
+Q24065158,Oraibi,mars,Q1130161,Oraibi,-110.640278,35.876389,United States,USA,North America,United States,town or village,Village; unincorporated community
+Q24065161,Ottumwa,mars,Q853566,Ottumwa,-92.414722,41.013056,United States,USA,North America,United States,town or village,city in the United States
+Q24065176,Pinglo,mars,Q736956,Pingluo County,106.54009,38.90717,China,CHN,Asia,People's Republic of China,district or region,county of China
+Q24065177,Pital,mars,Q3905819,Pital,-84.274167,10.450556,Costa Rica,CRI,North America,Costa Rica,district or region,district of Costa Rica
+Q24065180,Podor,mars,Q1019429,Podor,-14.960555,16.648889,Senegal,SEN,Africa,Senegal,town or village,city; commune of Senegal
+Q24065187,Porvoo,mars,Q193367,Porvoo,25.663889,60.393056,Finland,FIN,Europe,Finland,town or village,city in Finland; municipality of Finland
+Q24065217,Rong,mars,Q14291775,Rong,92.01245,29.22548,China,CHN,Asia,People's Republic of China,town or village,township of China
+Q24065218,Rongxar,mars,Q14293968,Rongxar Township,86.287447,28.042374,China,CHN,Asia,People's Republic of China,town or village,township of China
+Q24065228,Salaga,mars,Q995578,Salaga,-0.51875,8.55083,Ghana,GHA,Africa,Ghana,town or village,human settlement
+Q24065234,Sarh,mars,Q337530,Sarh,18.383333,9.15,Chad,TCD,Africa,Chad,town or village,city
+Q24065252,Shawnee,mars,Q2383206,Shawnee,-82.2103,39.6047,United States,USA,North America,United States,town or village,village of Ohio
+Q24065266,Soochow,mars,Q42622,Suzhou,120.619445,31.3,China,CHN,Asia,People's Republic of China,town or village,big city; prefecture-level city
+Q24065272,Steinheim,mars,Q2341049,Steinheim am Albuch,10.064167,48.692222,Germany,DEU,Europe,Germany,town or village,municipality without town privileges in Germany
+Q24065295,Taxco,mars,Q990095,Taxco de Alarcón,-99.60592,18.55462,Mexico,MEX,North America,Mexico,town or village,locality of Mexico
+Q24065297,Tecolote,mars,Q6140165,Tecolote,-105.280555,35.460278,United States,USA,North America,United States,town or village,census-designated place in the United States; human settlement
+Q24065338,Wabash,mars,Q989967,Wabash,-85.8272,40.8008,United States,USA,North America,United States,town or village,city in the United States
+Q24065339,Wahoo,mars,Q660140,Wahoo,-96.619805,41.211111,United States,USA,North America,United States,water or valley,city in the United States; county seat
+Q24065359,Xainza,mars,Q1026106,Xainza County,88.709857,30.930501,China,CHN,Asia,People's Republic of China,district or region,county of China
+Q24065367,Yoro,mars,Q2561180,Yoro,-87.12495,15.137914,Honduras,HND,North America,Honduras,town or village,big city; municipality of Honduras
+Q24065371,Zhigou,mars,Q11107873,Zhigou Town,119.22185,35.91695,China,CHN,Asia,People's Republic of China,town or village,town of China
+Q24065372,Zilair,mars,Q2026647,Zilair,57.440278,52.232222,Russia,RUS,Europe,Russia,town or village,Village; administrative divisions of Russia
+Q24065374,Zongo,mars,Q219930,Zongo,18.6,4.35,Democratic Republic of the Congo,COD,Africa,Democratic Republic of the Congo,town or village,border city; human settlement; official city of the Democratic Republic of the Congo
+Q24065460,Artik,mars,Q399,Artik,43.967,40.617,Armenia,ARM,Asia,Armenia,town or village,town (override)
+Q24065464,Auki,mars,Q538476,Auki,160.696944,-8.768333,Solomon Islands,,,Solomon Islands,town or village,human settlement
+Q24065470,Badwater,mars,Q4841188,Badwater,-116.766945,36.229722,United States,USA,North America,United States,town or village,unincorporated community
+Q24065523,Daan,mars,Q10934880,Da'an Town,106.29921,33.05662,China,CHN,Asia,People's Republic of China,town or village,town of China
+Q24065526,Deseado,mars,Q923541,Puerto Deseado,-65.916667,-47.75,Argentina,,,Argentina,town or village,city of Argentina; human settlement; municipality
+Q24065545,Farim,mars,Q1022984,Farim,-15.216667,12.483333,Guinea-Bissau,GNB,Africa,Guinea-Bissau,town or village,city
+Q24065581,Hsūanch'eng,mars,Q360942,Xuancheng,118.75178,30.94751,China,CHN,Asia,People's Republic of China,town or village,prefecture-level city
+Q24065620,Kotka,mars,Q192155,Kotka,26.945833,60.466667,Finland,FIN,Europe,Finland,town or village,city; municipality of Finland
+Q24065637,Linpu,mars,Q10877172,Linpu Town,120.2445,30.04762,China,CHN,Asia,People's Republic of China,town or village,town of China
+Q24065650,Madrid,mars,Q2807,Madrid,-3.703333,40.416944,Spain,ESP,Europe,Spain,town or village,municipality of Spain
+Q24065661,Micoud,mars,Q11779522,Micoud,-60.9,13.819,Saint Lucia,LCA,North America,Saint Lucia,town or village,town
+Q24065672,Naic,mars,Q62799,Naic,120.766667,14.316667,Philippines,PHL,Asia,Philippines,town or village,municipality of the Philippines
+Q24065727,Roseau,mars,Q36281,Roseau,-61.383333,15.3,Dominica,DMA,North America,Dominica,town or village,city
+Q24065745,Sinop,mars,Q599416,Sinop,35.151111,42.026667,Turkey,TUR,Asia,Turkey,town or village,big city; city; municipality
+Q24065747,Solano,mars,Q51494,Solano,121.181111,16.518333,Philippines,PHL,Asia,Philippines,town or village,municipality of the Philippines
+Q24065751,Ston,mars,Q86659764,Ston,17.696111,42.836111,Croatia,HRV,Europe,Croatia,town or village,settlement in Croatia
+Q24065805,Wafra,mars,Q7959441,Wafra,47.930556,28.639167,Kuwait,KWT,Asia,Kuwait,town or village,area of Kuwait; municipality
+Q24065813,Wiltz,mars,Q741589,Wiltz,5.9325,49.966111,Luxembourg,LUX,Europe,Luxembourg,town or village,municipality of Luxembourg
+Q24066546,Clasia Vallis,mars,Q1071692,Chiascio,12.430501,43.018211,Italy,ITA,Europe,Italy,water or valley,river
+Q24066649,Sungari Vallis,mars,Q210326,Songhua River,127.223889,42.727778,China,CHN,Asia,People's Republic of China,water or valley,river
+Q252470,Margaritifer Terra,mars,Q17052922,Pearl Fishery Coast,78.173,8.896,India,IND,Asia,,other place,
+Q25712870,Eagle,mars,Q1516870,Eagle,-116.346389,43.693056,United States,USA,North America,United States,town or village,city in the United States
+Q25909150,Belgica Rupes,mercury,Q815476,RV Belgica,16.593611,68.795,,,,,water or valley,hulk; research vessel; sailing ship; shipwreck
+Q25909156,Endeavour Rupes,mercury,Q312224,HMS Endeavour,-71.35,41.6,,,,,other place,collier; shipwreck; survey vessel
+Q25909157,Fram Rupes,mercury,Q110283,Fram,10.699445,59.903333,Norway,,,Norway,district or region,preserved watercraft; three-masted schooner
+Q25909158,Gjöa Rupes,mercury,Q1528966,Gjøa,10.698978,59.903733,Norway,,,Norway,district or region,preserved watercraft; sloop
+Q25909248,Angkor Vallis,mercury,Q163607,Angkor,103.833333,13.433333,Cambodia,KHM,Asia,Cambodia,town or village,ancient city; archaeological site; city; ruins
+Q25909249,Cahokia Vallis,mercury,Q333661,Cahokia,-90.064444,38.653889,United States,USA,North America,United States,town or village,Illinois state park; ancient city; archaeological site
+Q25909250,Caral Vallis,mercury,Q219279,,-77.520278,-10.893611,Peru,PER,South America,Peru,other place,archaeological site
+Q25909251,Paestum Vallis,mercury,Q329967,Paestum,15.005555,40.42,Italy,ITA,Europe,Italy,town or village,Ancient Greek archaeological site; ancient city; archaeological site; polis
+Q25909252,Timgad Vallis,mercury,Q459629,Timgad,6.468666,35.484237,Algeria,DZA,Africa,Algeria,town or village,Roman city; archaeological site; commune of Algeria
+Q26203123,Lismore,mars,Q1828038,Lismore,-7.9308,52.1367,Ireland,IRL,Europe,Ireland,town or village,human settlement; town
+Q26320952,Cilaos,mars,Q1014746,Cilaos,55.471111,-21.135278,France,FRA,Europe,France,town or village,commune of France
+Q26846974,Degana,mars,Q5251754,Degana,74.322166,26.895052,India,IND,Asia,India,town or village,village in India
+Q26884534,Nybyen,mars,Q4328464,Nybyen,15.566667,78.2,Norway,NOR,Europe,Norway,town or village,human settlement
+Q26955596,Taltal,mars,Q188049,Taltal,-70.466667,-25.433333,Chile,CHL,South America,Chile,town or village,city in Chile; commune of Chile
+Q2738904,Ganges Chasma,mars,Q5089,Ganges,90.9,22.0,India,,,India,water or valley,river; sacred river
+Q27643672,Krupac,mars,Q935817,Krupac,22.673333,43.1225,Serbia,SRB,Europe,Serbia,town or village,cadastral municipality of Serbia; human settlement
+Q27866070,Avan,mars,Q1254134,Avan,44.168333,40.335278,Armenia,ARM,Asia,Armenia,town or village,village in Armenia
+Q27942023,Ubud,mars,Q210654,Ubud,115.262,-8.507,Indonesia,IDN,Asia,Indonesia,town or village,town
+Q28467802,Andapa,mars,Q2526503,Andapa,49.65,-14.65,Madagascar,MDG,Africa,Madagascar,town or village,city; commune of Madagascar
+Q2859514,Arandas,mars,Q2431905,Arandas Municipality,-102.3,20.75,Mexico,MEX,North America,Mexico,town or village,municipality of Mexico
+Q2863425,Arnus Vallis,mars,Q115457,Arno,10.276623,43.68061,Italy,,,Italy,water or valley,main stem
+Q28653688,Sibiti,mars,Q739308,Sibiti,13.351111,-3.685,Republic of the Congo,COG,Africa,Republic of the Congo,town or village,commune of the Republic of the Congo; town
+Q28965150,Tarq Crater,mars,Q5950599,Tarq,51.799167,33.353611,Iran,IRN,Asia,Iran,town or village,city of Iran
+Q2899791,Beruri,mars,Q584172,Beruri,-61.371389,-3.902222,Brazil,BRA,South America,Brazil,town or village,municipality of Brazil
+Q29128974,Bam,mars,Q106636,Bam,58.356944,29.106111,Iran,IRN,Asia,Iran,town or village,big city; city of Iran
+Q29128979,Kankossa,mars,Q2578930,Kankossa,-11.520833,15.937222,Mauritania,MRT,Africa,Mauritania,town or village,commune of Mauritania
+Q29789641,Gediz Vallis,mars,Q1351474,Gediz River,26.815833,38.588333,Turkey,,,Turkey,water or valley,river
+Q30237951,Icaria Rupes,mars,Q209576,Icaria,26.166667,37.583333,Greece,GRC,Europe,Greece,mountain or island,island
+Q32396134,Gokwe,mars,Q31416386,Gokwe,31.726944,-17.651111,Zimbabwe,ZWE,Africa,Zimbabwe,other place,hill
+Q32396228,Alnif,mars,Q984312,Alnif,-5.173731,31.11689,Morocco,MAR,Africa,Morocco,town or village,commune of Morocco; rural commune of Morocco
+Q326868,Mare Moscoviense,moon,Q649,Moscow,37.6175,55.750556,Russia,RUS,Europe,Russia,town or village,big city; capital of Russia; city or town; federal city of Russia
+Q3297070,Púnsk,mars,Q548315,Puńsk,23.183333,54.25,Poland,POL,Europe,Poland,town or village,village of Poland
+Q3297422,Baltisk,mars,Q5660,Baltiysk,19.916667,54.65,Russia,RUS,Europe,Russia,town or village,city or town; port city; town of district significance in Russia
+Q3297822,Virrat,mars,Q938820,Virrat,23.770833,62.240278,Finland,FIN,Europe,Finland,town or village,municipality of Finland; town
+Q337946,Montes Teneriffe,moon,Q40846,Tenerife,-16.605556,28.268611,Spain,ESP,Europe,Spain,mountain or island,administrative territorial entity; tourist destination; volcanic island
+Q3509010,Syria Planum,mars,Q858,Syria,38.583333,35.216667,Syria,SYR,Asia,Syria,other place,Mediterranean country; country; sovereign state
+Q3532362,Toro,mars,Q836948,Toro,-5.394722,41.52,Spain,ESP,Europe,Spain,town or village,municipality of Spain
+Q3576289,Zunil,mars,Q230166,Zunil,-91.484444,14.783611,Guatemala,GTM,North America,Guatemala,town or village,municipality of Guatemala
+Q3622076,Arecibo Catena,mercury,Q44547,Arecibo Radio Telescope,-66.752778,18.344167,Puerto Rico,PRI,North America,Puerto Rico; United States,other place,Gregorian telescope; radio telescope
+Q3658151,Cape Verde,mars,Q1011,Cape Verde,-23.7,15.3,Cabo Verde,CPV,Africa,Cape Verde,mountain or island,archipelagic state; country; island country; sovereign state
+Q371988,Mohawk,mars,Q9034152,Mohawk,-74.416945,42.958333,United States,USA,North America,United States,town or village,town in the United States; town of New York
+Q3750587,Dinorwic,mars,Q3028445,Dinorwic,-92.5,49.7,Canada,CAN,North America,Canada,town or village,human settlement
+Q3783806,Haystack Catena,mercury,Q5687260,Haystack Observatory,-71.4882,42.6233,United States,USA,North America,United States,other place,astronomical observatory
+Q3893453,Pantheon Fossae,mercury,Q99309,Pantheon,12.476945,41.898611,Italy,ITA,Europe,Italy,other place,Italian national museum; Museum of the Italian Ministry of Culture; Roman archaeological site; Roman temple
+Q3961032,Simeiz Vallis,mercury,Q944482,Simeiz Observatory,33.9974,44.418039,Ukraine,UKR,Europe,Ukraine,other place,astronomical observatory
+Q4175845,Crivitz,mars,Q558985,Crivitz,11.65,53.583333,Germany,DEU,Europe,Germany,town or village,urban municipality in Germany
+Q4179061,Crewe,mars,Q648810,Crewe,-2.44,53.099,United Kingdom,GBR,Europe,United Kingdom,town or village,civil parish; railway town; town
+Q42403199,Kotido,mars,Q2505963,Kotido,34.1125,3.006111,Uganda,UGA,Africa,Uganda,town or village,human settlement
+Q4255290,Lahontan,mars,Q585214,Lake Lahontan,-118.5,39.8,United States,USA,North America,United States,water or valley,former lake; glacial lake
+Q4591858,Adirondack,mars,Q357546,Adirondack Mountains,-73.9239,44.1125,United States,USA,North America,Canada; United States,mountain or island,mountain range
+Q4782203,Apsus Vallis,mars,Q81632,Seman,19.8585,40.8131,Albania,ALB,Europe,Albania,water or valley,river
+Q4804701,El Capitan,mars,Q1124852,El Capitan,-119.637,37.734,United States,USA,North America,United States,other place,climbing area; rock formation
+Q48340915,Chukhung Crater,mars,Q5116018,Chhukung,86.871389,27.904722,Nepal,NPL,Asia,Nepal,town or village,Village
+Q4869118,Bathurst Inlet,mars,Q810805,Kiluhiqtuq,-108.469167,67.654167,Canada,,,Canada,water or valley,bay
+Q4876094,Beagle Rupes,mercury,Q35926,,0.813611,51.595833,United Kingdom,GBR,Europe,,other place,brig-sloop; shipwreck
+Q499001,Montes Alpes,moon,Q1286,Alps,8.615,46.578056,Switzerland,CHE,Europe,Austria; France; Germany; Hungary; Italy; Liechtenstein; Monaco; Slovenia; Switzerland,mountain or island,mountain range
+Q499037,Montes Apenninus,moon,Q1285,Apennines,13.565556,42.469167,Italy,ITA,Europe,Italy; San Marino,mountain or island,mountain range
+Q499132,Mons Argaeus,moon,Q126804,Mount Erciyes,35.45,38.531667,Turkey,TUR,Asia,Turkey,mountain or island,mountain; stratovolcano; volcano
+Q499158,Mont Blanc,moon,Q583,Mont Blanc,6.865,45.832778,France,FRA,Europe,France; Italy,mountain or island,four-thousander; highest point; ice dome; main peak
+Q499309,Montes Carpatus,moon,Q1288,Carpathians,25.5,47.0,Romania,ROU,Europe,Austria; Czech Republic; Hungary; Poland; Romania; Serbia; Slovakia; Ukraine,mountain or island,mountain range; non-geologically related mountain range
+Q499340,Montes Caucasus,moon,Q5477,Caucasus Mountains,45.0,42.5,Georgia,GEO,Asia,Russia,mountain or island,mountain range
+Q500040,Montes Haemus,moon,Q4897067,Haemus Mons,25.0,42.7,Bulgaria,BGR,Europe,Bulgaria; Serbia,mountain or island,mountain range
+Q5003221,Buvinda Vallis,mars,Q896037,River Boyne,-6.956764,53.351899,Ireland,IRL,Europe,Ireland,water or valley,river
+Q500521,Montes Jura,moon,Q178611,Jura Mountains,6.0219,47.2431,France,FRA,Europe,France; Switzerland,mountain or island,fold and thrust belt; massif
+Q500909,Montes Pyrenaeus,moon,Q12431,Pyrenees,0.6,42.7,France,FRA,Europe,Andorra; France; Spain,mountain or island,mountain range
+Q501100,Montes Spitzbergen,moon,Q25231,Svalbard,15.86426,78.15706,Norway,NOR,Europe,Norway,water or valley,archipelago; first-level administrative division; integral overseas territory
+Q501125,Montes Taurus,moon,Q172556,Taurus Mountains,33.0019,36.9964,Turkey,TUR,Asia,Turkey,mountain or island,mountain range
+Q5100329,Chincoteague,mars,Q1073686,Chincoteague,-75.36778,37.93444,United States,,,United States,town or village,town in the United States
+Q5169803,Corby,mars,Q994925,Corby,-0.696389,52.491389,United Kingdom,GBR,Europe,United Kingdom,town or village,civil parish; new town (UK); town; unparished area
+Q520,Olympus Mons,mars,Q80344,Mount Olympus,22.35,40.083333,Greece,GRC,Europe,Greece,mountain or island,Natura 2000 site; biosphere reserve; mountain; national park
+Q52160108,Oituz crater,mars,Q1027663,Oituz,26.616667,46.2,Romania,ROU,Europe,Romania,town or village,commune of Romania
+Q5442964,Fenagh,mars,Q4482574,Fenagh,-7.833914,54.020208,Ireland,IRL,Europe,Ireland,town or village,human settlement
+Q54669675,Salkhad crater,mars,Q24343,Salkhad,36.710555,32.491389,Syria,SYR,Asia,Syria,town or village,Village; archaeological site; populated place in Syria
+Q54669677,Nako crater,mars,Q999697,Nako Department,-3.066667,10.633333,Burkina Faso,BFA,Africa,Burkina Faso,other place,department of Burkina Faso
+Q5518241,Galdakao,mars,Q1227388,Galdakao,-2.845833,43.230556,Spain,ESP,Europe,Spain,town or village,municipality of Spain
+Q56632429,Alofi,mars,Q30966,Alofi,-169.921,-19.056,Niue,NIU,Oceania,Niue,town or village,town
+Q56632431,Banes crater,mars,Q806424,Banes,-75.72287,20.961719,Cuba,CUB,North America,Cuba,town or village,city; municipality of Cuba
+Q56632433,Izamal crater,mars,Q1020762,Izamal,-89.017778,20.931389,Mexico,MEX,North America,Mexico,town or village,locality of Mexico
+Q56632435,Jiji,mars,Q708391,Jiji Township,120.786389,23.828611,Taiwan,TWN,Asia,Taiwan,town or village,urban township of Taiwan
+Q56632439,Sera crater,mars,Q1349563,Sera,133.056611,34.586806,Japan,JPN,Asia,Japan,town or village,town of Japan
+Q56632440,Wulai,mars,Q32728,Wulai District,121.55,24.866667,Taiwan,TWN,Asia,Taiwan,mountain or island,mountain indigenous district
+Q56632442,Yelapa crater,mars,Q16904003,Yelapa,-105.442809,20.487292,Mexico,MEX,North America,Mexico,town or village,locality of Mexico
+Q5699594,Heimdal,mars,Q636798,Heimdal,10.358611,63.351389,Norway,NOR,Europe,Norway,town or village,city district; human settlement; urban area in Norway
+Q5766485,Chimbote,mars,Q518431,Chimbote,-78.593572,-9.074545,Peru,PER,South America,Peru,town or village,big city; city
+Q582341,Bacolor,mars,Q55696,Bacolor,120.65265,14.998428,Philippines,PHL,Asia,Philippines,town or village,municipality of the Philippines
+Q59247458,Cagli,mars,Q190514,Cagli,12.6473,43.547,Italy,ITA,Europe,Italy,town or village,comune of Italy
+Q59247459,Kalpin,mars,Q1207782,Kalpin County,79.04777,40.50396,China,CHN,Asia,People's Republic of China,district or region,county of China
+Q5960853,Kufra,mars,Q172114,Kufra,23.283333,24.183333,Libya,LBY,Africa,Libya,town or village,municipality of Libya; oasis
+Q5981367,Lota,mars,Q16911,Lota,-73.1563,-37.0944,Chile,CHL,South America,Chile,town or village,city in Chile; commune of Chile
+Q6169690,Yakima,mars,Q499203,Yakima,-120.507778,46.601944,United States,USA,North America,United States,water or valley,city in the United States; county seat
+Q61992197,Mons Tai,moon,Q216059,Mount Tai,117.1,36.266667,China,CHN,Asia,People's Republic of China,mountain or island,Chinese AAAAA-rated tourist attraction; mountain
+Q623857,Arabia Terra,mars,Q31945,Arabian Peninsula,46.0,23.0,Saudi Arabia,SAU,Asia,Bahrain; Iraq; Jordan; Kuwait; Oman; Qatar; Saudi Arabia; United Arab Emirates; Yemen,district or region,cultural region; peninsula; province
+Q62829022,Borobudur Temple,mercury,Q42798,Borobudur Temple,110.20384,-7.60793,Indonesia,IDN,Asia,Indonesia,other place,Buddhist temple; Candi; archaeological site
+Q6413501,Cobres,mars,Q1563449,San Antonio de los Cobres,-66.319167,-24.225556,Argentina,ARG,South America,Argentina,town or village,city of Argentina; municipality
+Q6413501,Cobres,mars,Q5139005,Cobres,-66.287081,-23.649632,Argentina,ARG,South America,Argentina,town or village,human settlement
+Q6414624,Kipini,mars,Q6414625,Kipini,40.5262,-2.52565,Kenya,KEN,Africa,Kenya,town or village,human settlement
+Q64557240,Kilkhampton crater,mars,Q3245937,Kilkhampton,-4.484,50.875,United Kingdom,GBR,Europe,United Kingdom,town or village,Village; civil parish
+Q6470705,Thira,mars,Q617169,Fira,25.431667,36.42,Greece,GRC,Europe,Greece,town or village,Village; town
+Q6471121,Winslow,mars,Q79727,Winslow,-110.700833,35.028611,United States,USA,North America,United States,town or village,city in the United States
+Q65363218,Tehachapi crater,mars,Q985253,Tehachapi,-118.448889,35.132222,United States,USA,North America,United States,town or village,city in the United States
+Q6666182,Lod,mars,Q207540,Lod,34.9,31.95,Israel,ISR,Asia,Israel,town or village,city; depopulated Palestinian village
+Q66764472,Chamba crater,mars,Q1949346,Chamba,76.125,32.556111,India,IND,Asia,India,town or village,human settlement
+Q6748160,Mandora,mars,Q6748159,Mandora Station,120.85,-19.75,Australia,AUS,Oceania,Australia,other place,pastoral lease
+Q6802415,McMurdo,mars,Q498627,McMurdo Station,166.668422,-77.848209,Antarctica,ATA,Antarctica,United States,water or valley,Antarctic research station
+Q6894988,Mojave,mars,Q1943133,Mojave,-118.18889,35.01667,United States,USA,North America,United States,town or village,census-designated place in the United States; unincorporated community
+Q6905454,Montevallo,mars,Q79549,Montevallo,-86.862817,33.104927,United States,USA,North America,United States,town or village,city in the United States
+Q7032766,Niger Vallis,mars,Q3542,Niger River,6.469167,5.322222,Nigeria,NGA,Africa,Benin; Guinea; Mali; Niger; Nigeria,water or valley,river
+Q7039495,Nipigon,mars,Q1993247,Nipigon,-88.263092,49.012578,Canada,CAN,North America,Canada,town or village,single-tier municipality; township municipality in Ontario
+Q7170037,Persbo,mars,Q2700342,Persbo,15.220876,60.206038,Sweden,SWE,Europe,Sweden,town or village,minor locality in Sweden; urban area in Sweden
+Q7231739,Porth,mars,Q3404200,Porth,-3.4095,51.6138,United Kingdom,GBR,Europe,United Kingdom,town or village,Village; community; post town
+Q7419517,Santa Fe,mars,Q38555,Santa Fe,-105.966667,35.666667,United States,USA,North America,United States,water or valley,city in the United States; county seat; tourist city
+Q748111,Hellas Planitia,mars,Q41,Greece,23.0,38.5,Greece,GRC,Europe,Greece,other place,country; sovereign state
+Q7507297,Sibu,mars,Q1048700,Sibu,111.816667,2.3,Malaysia,MYS,Asia,Malaysia,town or village,big city; town
+Q7535433,Skinakas,mercury,Q12874150,Skinakas Observatory,24.8975,35.2118,Greece,GRC,Europe,Greece,other place,astronomical observatory
+Q7690340,Taytay,mars,Q111730,Taytay,119.516667,10.816667,Philippines,PHL,Asia,Philippines,town or village,municipality of the Philippines
+Q7784160,Thila,mars,Q6587270,Thila,43.9,15.583333,Yemen,YEM,Asia,Yemen,town or village,city; human settlement
+Q7804763,Timbuktu,mars,Q9427,Timbuktu,-2.999444,16.773333,Mali,MLI,Africa,Mali,town or village,city; urban area
+Q7921934,Vernal,mars,Q482828,Vernal,-109.536,40.4547,United States,USA,North America,United States,water or valley,city in the United States; county seat
+Q8240547,Balboa,mars,Q2078026,Balboa,-79.55934,8.957124,Panama,PAN,North America,Panama,town or village,city
+Q8250845,Bordeaux,mars,Q1479,Bordeaux,-0.579444,44.837778,France,FRA,Europe,France,town or village,big city; commune of France
+Q83561451,Neretva Vallis,mars,Q190777,Neretva,17.445,43.019722,Bosnia and Herzegovina,,,Bosnia and Herzegovina; Croatia,water or valley,river
+Q83561452,Una Vallis,mars,Q212927,Una,16.103796,44.399457,Croatia,HRV,Europe,Bosnia and Herzegovina; Croatia,water or valley,river
+Q83565080,Ulricehamn crater,mars,Q382808,Ulricehamn Municipality,13.412778,57.791667,Sweden,SWE,Europe,Sweden,town or village,municipality of Sweden
+Q83565082,Angelica,mars,Q3708462,Angelica,-78.015291,42.303811,United States,USA,North America,United States,town or village,town in the United States; town of New York
+Q83565083,Belva crater,mars,Q4406528,Belva,-81.1936,38.2306,United States,USA,North America,United States,town or village,census-designated place in the United States; unincorporated community
+Q83565084,Dacono,mars,Q2152170,Dacono,-104.945,40.0758,United States,USA,North America,United States,town or village,city in the United States
+Q83565085,Hartwell crater,mars,Q2855962,Hartwell,-82.9311,34.3528,United States,USA,North America,United States,water or valley,city in the United States; county seat; municipality of Georgia
+Q83565086,Marysville crater,mars,Q950966,Marysville,-121.591389,39.145833,United States,USA,North America,United States,town or village,charter city; city in the United States
+Q83565088,Sedona crater,mars,Q80041,Sedona,-111.789167,34.86,United States,USA,North America,United States,town or village,city in the United States
+Q84852853,Malino crater,mars,Q12496396,Malino,119.294527,-2.247905,Indonesia,IDN,Asia,Indonesia,other place,desa
+Q84852854,Zaim crater,mars,Q2437415,Zaim,29.346389,46.619445,Moldova,MDA,Europe,Moldova,water or valley,Village; seat village
+Q87918674,Izola Mensa,mars,Q15877,Izola,13.660405,45.539545,Slovenia,SVN,Europe,Slovenia,town or village,city; human settlement
+Q87919188,Izola crater,mars,Q15877,Izola,13.660405,45.539545,Slovenia,SVN,Europe,Slovenia,town or village,city; human settlement
+Q88875487,Pliva Vallis,mars,Q1063794,Pliva,17.0147,44.2399,Bosnia and Herzegovina,BIH,Europe,Bosnia and Herzegovina,water or valley,river
+Q88875499,Sava Vallis,mars,Q14383,Sava,20.449722,44.831667,Serbia,SRB,Europe,Bosnia and Herzegovina; Croatia; Serbia; Slovenia,water or valley,river
+Q892804,Bonneville,mars,Q1748190,Lake Bonneville,-112.25,40.5,United States,USA,North America,United States,water or valley,pluvial lake
+Q914016,Jezero,mars,Q1275581,Jezero,17.166667,44.316667,Bosnia and Herzegovina,BIH,Europe,Bosnia and Herzegovina,town or village,human settlement
+Q9282410,Grójec,mars,Q391461,Grójec,20.8675,51.865555,Poland,POL,Europe,Poland,town or village,Royal city in Polish-Lithuanian Commonwealth; city
+Q9324548,Rypin,mars,Q325244,Rypin,19.406944,53.066944,Poland,POL,Europe,Poland,town or village,city; urban municipality of Poland
+Q96396973,Nutak,mars,Q97280471,Nutak,-61.830833,57.482222,Canada,,,Canada,other place,unincorporated area
+Q9648623,Baro,mars,Q3635086,Baro,6.416667,8.583333,Nigeria,NGA,Africa,Nigeria,town or village,human settlement
+Q9659093,Bled,mars,Q202852,Bled,14.114722,46.368333,Slovenia,SVN,Europe,Slovenia,town or village,city
+Q9661119,Bombala,mars,Q2253650,Bombala,149.234444,-36.915,Australia,AUS,Oceania,Australia,town or village,locality; town
+Q9748691,Chinook,mars,Q5101233,Chinook,-110.925,51.4494,Canada,CAN,North America,Canada,town or village,hamlet in Alberta
+Q98582077,Jamestown,moon,Q323813,Jamestown,-76.7775,37.209167,Commonwealth of England,,,Commonwealth of England; Confederate States of America; Kingdom of England; Kingdom of Great Britain; United States,town or village,unincorporated community
+Q992791,Syrtis Major Planum,mars,Q3110259,The Sea of the Syrtes,18.0,31.5,,,,,other place,

@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Who's on the Moon?</title>
+<meta name="description" content="Whose names are on the Moon, Mercury, Venus and Mars? {{all.namings|int}} features named after people, linked to the birthplaces of the people they honour: {{body.moon.europe_pct|pc}} of the Moon's namesakes were born in Europe. From Wikidata.">
+<meta property="og:title" content="Who's on the Moon? The birthplaces of the people we named other worlds after">
+<meta property="og:description" content="{{body.moon.europe_pct|pc}} of the Moon's people were born in Europe. Paris alone has {{moon.paris_n|int}} lunar features, more than Africa, South America and Oceania together. Click a crater to fly to its namesake's home town.">
+<meta property="og:image" content="https://maps.tristanhotham.com/moon-names/header.png">
+<meta property="og:url" content="https://maps.tristanhotham.com/moon-names/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=MedievalSharp&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<style>
+/* Parchment, ink and four worlds: lunar grey, Mercury bronze, Venus gold, Mars red. */
+:root{
+  --bg:#F6EED8; --panel:#EFE3C4; --fg:#2B2119; --muted:#6E604E; --rule:#E2D3AE; --card:#FBF5E4; --border:#D3C29A;
+  --hot:#A3261B; --cool:#3D6E9E;
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+  --hand:"MedievalSharp","Fraunces",Georgia,serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1A1612; --panel:#241E18; --fg:#EFE6D4; --muted:#ADA08B; --rule:#3A3128; --card:#211B15; --border:#4D4234; --hot:#E07A6C; --cool:#8FB4DA; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1A1612; --panel:#241E18; --fg:#EFE6D4; --muted:#ADA08B; --rule:#3A3128; --card:#211B15; --border:#4D4234; --hot:#E07A6C; --cool:#8FB4DA; color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 18px/1.62 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));overflow-x:hidden}
+.wrap{max-width:720px;margin:0 auto;padding-block:28px 64px}
+.wrap .bleed{width:min(1240px,calc(100vw - 32px));margin-left:calc((100% - min(1240px,100vw - 32px))/2)}
+a{color:inherit;text-decoration-color:var(--hot);text-underline-offset:3px}
+.kicker{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.kicker b{background:#A3261B;color:#fff;padding:5px 8px;font-weight:500}
+header.hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 24px;align-items:end;border-bottom:6px double var(--fg);padding-bottom:22px;margin-top:18px}
+h1{font:900 clamp(44px,10vw,92px)/.92 var(--display);letter-spacing:-.02em;margin:0;text-wrap:balance}
+h1 .a{color:var(--hot);font-family:var(--hand);font-weight:400;letter-spacing:.01em}
+.mark{width:clamp(78px,16vw,130px);height:auto;display:block;color:var(--fg)}
+.dek{grid-column:1/-1;font-size:21px;line-height:1.42;margin:8px 0 0;max-width:58ch}
+.byline{font:400 13px/1.4 var(--mono);color:var(--muted);margin-top:14px}
+h2{font:800 34px/1.04 var(--display);letter-spacing:-.01em;margin:54px 0 10px;text-wrap:balance}
+h2 .n{font:500 13px/1 var(--mono);color:var(--hot);display:block;letter-spacing:.1em;margin-bottom:10px}
+h3{font:600 20px/1.25 var(--display);margin:28px 0 6px}
+p{margin:0 0 16px}
+.lede::first-letter{font:400 76px/.8 var(--hand);float:left;margin:6px 10px 0 0;color:var(--hot)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin:26px 0 8px}
+.stats div{background:var(--card);padding:14px 12px}
+.stats b{display:block;font:900 clamp(22px,4.4vw,32px)/1 var(--display);letter-spacing:-.01em;color:var(--hot)}
+.stats span{font:400 12px/1.35 var(--mono);color:var(--muted);display:block;margin-top:6px}
+@media (max-width:600px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.figure{margin:26px 0 30px}
+.fig-h{font:600 19px/1.25 var(--display);margin:0 0 4px}
+.fig-sub{font:400 13px/1.45 var(--mono);color:var(--muted);margin:0 0 12px}
+.src{font:400 12px/1.45 var(--mono);color:var(--muted);margin-top:10px}
+.chart{width:100%;position:relative}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+svg text{font-family:var(--mono);fill:var(--fg)}
+.lab{font-size:12px}.lab.m{fill:var(--muted)}.lab.b{font-weight:500}.lab.s{font-size:11px}.lab.w{fill:#fff}
+.tip{position:absolute;pointer-events:none;background:var(--fg);color:var(--bg);font:400 12px/1.45 var(--mono);padding:8px 10px;border-radius:3px;max-width:300px;z-index:3000;transform:translate(-50%,calc(-100% - 12px));display:none}
+.controls{display:flex;gap:8px 16px;align-items:center;margin:0 0 10px;flex-wrap:wrap}
+.scrollrow{display:flex;gap:6px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;padding-bottom:2px;max-width:100%}
+.scrollrow .btn{flex:0 0 auto;white-space:nowrap}
+.ctl-l{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:2px;flex:0 0 auto;align-self:center}
+.btn{font:500 12px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:8px 10px;cursor:pointer;min-height:36px}
+.btn[aria-pressed="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.btn i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;border:1px solid rgba(0,0,0,.25)}
+.btn:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--hot);outline-offset:2px}
+.srch{position:relative;flex:1 1 260px;max-width:380px}
+.srch input{width:100%;font:400 15px/1 var(--mono);background:var(--card);color:var(--fg);border:1px solid var(--border);border-radius:3px;padding:9px 10px;min-height:40px}
+.sug{position:absolute;left:0;right:0;top:100%;margin:2px 0 0;padding:0;list-style:none;background:var(--card);border:1px solid var(--border);max-height:320px;overflow:auto;display:none;box-shadow:0 3px 10px rgba(60,40,10,.2);z-index:1200;font:400 13px/1.35 var(--mono)}
+.sug li{padding:8px 10px;cursor:pointer;border-bottom:1px solid var(--rule)}
+.sug li span{color:var(--muted);font-size:12px}
+.sug li[aria-selected="true"],.sug li:hover{background:var(--panel)}
+.twin{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+@media (max-width:900px){.twin{grid-template-columns:1fr}}
+.mapbox{position:relative}
+.maptitle{font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 6px;display:flex;justify-content:space-between;gap:8px}
+.lmap{height:600px;border:1px solid #BCA676;background:#F3E5BF;border-radius:2px;position:relative;overflow:hidden}
+#bmap{background:#E9DFC6}
+@media (max-width:900px){.lmap{height:min(62vh,520px)}}
+.maplibregl-map{font:400 12px/1.4 var(--mono)}
+.lyrCtl{margin:10px 0 0 10px}
+.lyrBtn{background:#FBF5E4;color:#2B2119;border:1px solid #9C8656;border-radius:3px;font:600 12px/1 var(--mono);padding:8px 10px;cursor:pointer;box-shadow:0 1px 4px rgba(60,40,10,.18)}
+.lyrBtn[aria-expanded="true"]{background:#2B2119;color:#F6EED8}
+.lyrPanel{background:rgba(251,245,228,.98);color:#2B2119;border:1px solid #9C8656;border-radius:3px;padding:10px 12px 8px;margin-top:6px;width:250px;box-shadow:0 2px 10px rgba(60,40,10,.25);font:400 12px/1.3 var(--mono);max-height:min(56vh,430px);overflow:auto}
+.lyrPanel[hidden]{display:none}
+.lyrPanel h5{margin:8px 0 2px;padding-top:6px;border-top:1px solid #E2D3AE;font:600 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#A3261B}
+.lyrPanel h5:first-child{border-top:0;padding-top:0;margin-top:0}
+.lyrPanel label{display:flex;gap:7px;align-items:center;cursor:pointer;padding:3px 0;min-height:28px}
+.lyrPanel input{accent-color:#A3261B;width:15px;height:15px;flex:none}
+.lyrPanel .reset{font:400 11px var(--mono);color:#6E604E;background:none;border:0;padding:4px 0 0;cursor:pointer;text-decoration:underline}
+.mapnote{position:absolute;left:10px;bottom:10px;z-index:3;background:rgba(251,245,228,.92);border:1px solid #9C8656;border-radius:3px;padding:5px 8px;font:400 11.5px/1.35 var(--mono);max-width:min(330px,70%);color:#2B2119;pointer-events:none}
+.mapnote:empty{display:none}
+.maplibregl-ctrl-attrib{font:400 11px/1.3 var(--mono)!important;background:rgba(251,245,228,.85)!important;color:#2B2119}
+.maplibregl-ctrl-group{background:#FBF5E4!important;border:1px solid #9C8656}
+.maplibregl-popup-content{background:#FBF5E4;color:#2B2119;font:400 12.5px/1.45 var(--mono);border:1px solid #9C8656;border-radius:4px;padding:10px 12px;box-shadow:0 3px 12px rgba(60,40,10,.25);max-width:300px;max-height:320px;overflow:auto}
+.maplibregl-popup-content b.t{display:block;font:400 19px/1.15 var(--hand);color:#A3261B;margin-bottom:3px}
+.maplibregl-popup-content .k{color:#6E604E}
+.maplibregl-popup-content a{color:#A3261B}
+.maplibregl-popup-content ul{margin:4px 0 0;padding:0;list-style:none}
+.maplibregl-popup-content li{margin:3px 0}
+.maplibregl-popup-tip{border-top-color:#9C8656!important;border-bottom-color:#9C8656!important}
+.maplibregl-popup-close-button{color:#2B2119;font-size:18px;padding:0 6px}
+.go{cursor:pointer;text-decoration:underline;text-decoration-color:#A3261B;text-underline-offset:3px;color:#A3261B}
+.flylink{display:inline-block;margin-top:6px;font:500 12px/1 var(--mono);color:#fff!important;background:#A3261B;border-radius:3px;padding:7px 9px;cursor:pointer;text-decoration:none}
+.linkcard{display:grid;grid-template-columns:minmax(0,1fr) 30px minmax(0,1fr);gap:8px;align-items:center;background:var(--card);border:1px solid var(--border);padding:10px 12px;margin-top:10px;font:400 13px/1.45 var(--mono);min-height:58px}
+.linkcard .arrow{font:400 22px/1 var(--hand);color:var(--hot);text-align:center}
+.linkcard b{font:700 16px/1.2 var(--display)}
+.linkcard .k{color:var(--muted)}
+@media (max-width:600px){.linkcard{grid-template-columns:1fr}.linkcard .arrow{transform:rotate(90deg);text-align:left}}
+.legend{display:flex;gap:6px 14px;flex-wrap:wrap;font:400 12px/1.3 var(--mono);color:var(--muted);margin-top:8px;align-items:center}
+.legend span{display:inline-flex;align-items:center}
+.legend i{display:inline-block;width:12px;height:12px;margin-right:6px;border-radius:50%;border:1px solid rgba(43,33,25,.5)}
+.pull{font:600 26px/1.25 var(--display);border-left:6px solid var(--hot);padding:4px 0 4px 18px;margin:30px 0}
+table.tbl{width:100%;border-collapse:collapse;font:400 13px/1.4 var(--mono)}
+table.tbl th{font:500 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-align:left;padding:6px 6px 6px 0;border-bottom:2px solid var(--fg);position:sticky;top:0;background:var(--card)}
+table.tbl td{padding:6px 6px 6px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+table.tbl td.r,table.tbl th.r{text-align:right;white-space:nowrap}
+table.tbl tr[data-k]{cursor:pointer}
+table.tbl tr[data-k]:hover td{background:var(--panel)}
+.tablebox{max-height:460px;overflow:auto;border:1px solid var(--border);background:var(--card);padding:0 10px}
+details{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:10px 0;margin:18px 0;font-size:16px}
+summary{font:500 13px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;color:var(--muted)}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.cta a{font:500 13px/1 var(--mono);text-decoration:none;border:1px solid var(--fg);padding:11px 14px;border-radius:3px}
+.cta a.p{background:#A3261B;border-color:#A3261B;color:#fff}
+footer{border-top:6px double var(--fg);margin-top:56px;padding-top:16px;font:400 13px/1.55 var(--mono);color:var(--muted)}
+footer p{margin:0 0 10px}
+.theme{position:fixed;right:12px;bottom:12px;z-index:1002}
+@media (max-width:600px){h2{font-size:28px}}
+@media print{.theme,.controls{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="kicker"><b>Data study</b><span>Space and names</span><span>The Moon, Mercury, Venus and Mars</span></div>
+<header class="hero">
+  <h1>Who's on the <span class="a">Moon?</span></h1>
+  <svg class="mark" viewBox="0 0 120 120" aria-hidden="true"><g id="heroMark"></g></svg>
+  <p class="dek">Thousands of craters, mountains and valleys on the Moon, Mercury, Venus and Mars are named after people. I traced {{all.namings|int}} of those names back to Earth, to the towns where the people they honour were born. Click a crater and fly to its namesake's home town.</p>
+</header>
+<div class="byline">Dr Tristan Hotham · Independent researcher · 2026 · Data: Wikidata (CC0); map: OpenStreetMap via OpenFreeMap, Natural Earth</div>
+
+<div class="stats">
+  <div><b>{{body.moon.europe_pct|pc}}</b><span>of the Moon's people were born in Europe</span></div>
+  <div><b>{{moon.paris_n|int}}</b><span>lunar features honour people born in Paris; Africa, South America and Oceania together have {{moon.south_n|int}}</span></div>
+  <div><b>{{far.ussr_ratio|f1}}x</b><span>as many far-side names as near-side names honour people born in the former Soviet Union</span></div>
+  <div><b>{{women.moon.pct|f1}}%</b><span>of the Moon's namesakes are women; on Mercury {{women.mercury.pct|pc}}, on Mars {{women.mars.pct|pc}}</span></div>
+</div>
+
+<p class="lede">Look up at the Moon and you are looking at a map of Europe. Not the shapes, but the names. Copernicus, Tycho, Kepler, Plato: the great craters of the near side carry the names of astronomers and philosophers, most of them born within a few days' ride of each other. Since the seventeenth century, when the Jesuit astronomer Giovanni Battista Riccioli gave many of them the names they still have, we have gone on naming the features of other worlds after people. The International Astronomical Union now keeps the list, with a rule for each world: Mercury's craters go to artists, writers and composers, Venus's features to women, and Mars's small craters to the villages of Earth.</p>
+<p>Wikidata, the open database behind Wikipedia, records what most of these features are named after, and where most of those people were born. I joined the two: {{source.features|int}} named features on the Moon, Mercury, Venus and Mars, {{all.namings|int}} of them named after {{source.people|int}} people, linked to {{n_birthplaces|int}} birthplaces on Earth. The question is a simple one. When we name another world after people, whose world is it?</p>
+
+<h2><span class="n">01 · The map</span>Two worlds, linked</h2>
+<p>On the left is the world you choose; on the right, Earth. Each dot on the left is a named feature, coloured by where its namesake was born; each dot on the right is a birthplace, sized by how many features it has. Click either and the other map follows.</p>
+<div class="bleed" id="atlas">
+<div class="controls">
+  <div class="scrollrow" id="bodyRow"><span class="ctl-l">World</span></div>
+  <div class="scrollrow" id="colRow"><span class="ctl-l">Colour</span><button class="btn" data-c="cont" aria-pressed="true">Continent of birth</button><button class="btn" data-c="occ" aria-pressed="false">What they did</button></div>
+  <div class="srch"><input type="search" id="q" placeholder="Find a crater, person or town" aria-label="Find a crater, person or birthplace" autocomplete="off"><ul class="sug" id="sug" role="listbox"></ul></div>
+</div>
+<div class="twin">
+  <div class="mapbox"><div class="maptitle"><span id="btitle">The Moon</span><span id="bcount"></span></div><div id="bmap" class="lmap" role="application" aria-label="Map of named features on the chosen world"><div class="mapnote" id="bnote"></div></div></div>
+  <div class="mapbox"><div class="maptitle"><span>Earth: where they were born</span><span id="ecount"></span></div><div id="emap" class="lmap" role="application" aria-label="Map of the birthplaces of the people features are named after"><div class="mapnote" id="enote"></div></div></div>
+</div>
+<div class="linkcard" id="linkcard" aria-live="polite"></div>
+<div class="legend" id="legend"></div>
+<p class="src">Positions from Wikidata, on each world's own longitude and latitude (east positive). Web maps cannot show the poles, so features beyond 85 degrees are drawn at the edge. Grey rings on the left are features named after something other than a person, such as a village, a ship or a word. Open red circles on the right (on by default) are the places on Earth that features on the chosen world are named after. Imagery for the Moon and Mars (in the layers panel): {{meta.att|raw}}. Earth: the Inked World map style on OpenStreetMap data via OpenFreeMap.</p>
+</div>
+
+<h2><span class="n">02 · Whose Moon</span>Three quarters European</h2>
+<p>Of the {{body.moon.located|int}} lunar features named after a person whose birthplace Wikidata knows, {{body.moon.cont.Europe.n|int}} ({{body.moon.europe_pct|pc}}) honour someone born in Europe, and {{body.moon.cont.North America.n|int}} ({{body.moon.cont.North America.pct|pc}}) someone born in North America. Asia has {{body.moon.cont.Asia.n|int}}, {{moon.asia_pre1500|int}} of them born before 1500: the Greek scholars of Anatolia (Turkey has {{moon.turkey_n|int}}) and the astronomers of the Islamic world. China has {{moon.china_n|int}}. Africa has {{moon.africa_n|int}}, {{moon.egypt_n|int}} of them in Egypt, above all the scholars of ancient Alexandria; South America has {{moon.sam_n|int}} and Oceania {{moon.oce_n|int}}. Paris alone, with {{moon.paris_n|int}}, outnumbers those three continents together.</p>
+<div class="figure"><p class="fig-h">Where the namesakes were born, by world</p><p class="fig-sub">Share of features named after a person with a known birthplace, by the modern continent of that birthplace. Hover a block.</p><div class="chart" id="contChart"></div><div class="legend" id="contLegend"></div></div>
+<p>The other worlds, named later and under newer rules, are wider. Mercury is the least European: {{body.mercury.europe_pct|pc}} of its namesakes were born in Europe and {{body.mercury.cont.Asia.pct|pc}} in Asia, because the rule for its craters, artists, writers and composers, reaches into Japanese, Chinese and Indian art in a way that the history of astronomy, as told in the West, does not. Venus has {{body.venus.europe_pct|pc}} and Mars {{body.mars.europe_pct|pc}}. Across all four worlds, {{all.europe_pct|pc}} of the people with a known birthplace were born in Europe, in {{all.n_countries|int}} modern countries in all.</p>
+
+<h2><span class="n">03 · Countries</span>The United States, Germany, Britain and France</h2>
+<p>By modern country the Moon is shared between four: the United States ({{body.moon.top.0.pct|pc}}), Germany ({{body.moon.top.1.pct|pc}}), the United Kingdom ({{body.moon.top.2.pct|pc}}) and France ({{body.moon.top.3.pct|pc}}), then Italy and Russia. Germany, France and Britain together hold {{moon.de_fr_uk_pct|pc}} of the Moon's people. India has {{moon.india_n|int}} and Japan {{moon.japan_n|int}}. On Venus and Mars the United States leads by more: {{body.venus.top.0.pct|pc}} and {{body.mars.top.0.pct|pc}}.</p>
+<div class="figure"><p class="fig-h">The top countries on each world</p><p class="fig-sub">Share of features named after a person with a known birthplace, by the modern country of that birthplace. Hover a bar.</p><div class="chart" id="ctyChart"></div></div>
+
+<h2><span class="n">04 · When</span>The nineteenth century's Moon</h2>
+<p>Half of the Moon's people were born before {{body.moon.born_median|raw}}. The Moon carries the oldest names: {{body.moon.born_before_1500|int}} of its features honour people born before 1500, from Thales and Anaximander to Ptolemy, al-Battani and Ulugh Beg. But its biggest cohort was born in the nineteenth century, the age of the great observatories. The median person on Mercury was born in {{body.mercury.born_median|raw}}, on Venus in {{body.venus.born_median|raw}} and on Mars in {{body.mars.born_median|raw}}.</p>
+<div class="figure"><p class="fig-h">Namesakes by century of birth</p><p class="fig-sub">Features named after a person with a known date of birth, by the century of that birth. Hover a column.</p><div class="chart" id="centChart"></div></div>
+
+<h2><span class="n">05 · What they did</span>Astronomers, scientists, artists, women</h2>
+<p>On the Moon {{body.moon.occ.astro.pct|pc}} of namesakes were astronomers and another {{body.moon.occ.science.pct|pc}} other scientists, mathematicians or engineers. Mercury is the mirror image: {{body.mercury.occ.arts.pct|pc}} were writers, artists or musicians first, and {{mercury.arts_any_pct|pc}} had at least one such occupation, as the rule for its craters asks. Venus has the IAU's rule that its features honour women, real or mythical: its craters are named after famous women, from Sappho and Cleopatra to Rachel Carson and Margaret Mead, so it is the only world here where politicians, queens and saints appear in any number ({{body.venus.occ.other.pct|pc}}).</p>
+<div class="figure"><p class="fig-h">What the namesakes did</p><p class="fig-sub">Each person in one group: the first that any of their Wikidata occupations falls in, in the order of the legend; people with no occupation recorded are left out. Hover a block.</p><div class="chart" id="occChart"></div><div class="legend" id="occLegend"></div></div>
+
+<h2><span class="n">06 · Women</span>Fewer than one in thirty on the Moon</h2>
+<p>Venus is a world of women by rule: all but one of its {{women.venus.n|int}} features named after a person with a recorded sex honour a woman ({{women.venus.pct|f1}}%); the exception is Maxwell Montes, named after James Clerk Maxwell before the rule was set. Leave Venus aside and the picture is stark. On the Moon only {{women.moon.women|int}} of {{women.moon.n|int}} namesakes are women ({{women.moon.pct|f1}}%), among them Hypatia, Hildegard of Bingen, Lise Meitner, Emmy Noether and Valentina Tereshkova. Mars has {{women.mars.pct|f1}}% and Mercury, with its artists and writers, {{women.mercury.pct|f1}}%. Across the three worlds it is {{women.three.pct|f1}}%.</p>
+<p>The share rises with birth date, because the names honour the dead and women were long shut out of science: {{women.by_birth_three.0.pct|f1}}% of namesakes born before 1800 on these three worlds are women, {{women.by_birth_three.1.pct|f1}}% of those born in the 1800s, {{women.by_birth_three.2.pct|f1}}% of those born from 1900 to 1939 and {{women.by_birth_three.3.pct|f1}}% of the {{women.by_birth_three.3.n|int}} born in 1940 or later, among them the astronauts Judith Resnik, Christa McAuliffe, Kalpana Chawla and Laurel Clark.</p>
+<div class="figure"><p class="fig-h">Women among the namesakes</p><p class="fig-sub">Share of features named after a person recorded in Wikidata as female, among those recorded as female or male, by world (left) and, for the Moon, Mercury and Mars together, by period of birth (right). Hover a bar.</p><div class="chart" id="womenChart"></div></div>
+
+<h2><span class="n">07 · Near and far</span>The Soviet far side</h2>
+<p>The Moon always turns the same face to Earth. Nobody saw the other side until the Soviet probe Luna 3 photographed it in 1959, and most of its features were named in the following years, many after Soviet proposals. You can see it in the birthplaces. On the near side, {{far.near.ussr_pct|pc}} of namesakes were born in the former Soviet Union; on the far side, {{far.far.ussr_pct|pc}}, {{far.ussr_ratio|f1}} times as many. The far side's people are also younger (the median was born in {{far.far.born_median|raw}}, against {{far.near.born_median|raw}} on the near side), more often American ({{far.far.us_pct|pc}} against {{far.near.us_pct|pc}}), and include {{far.far.space_people|int}} astronauts and cosmonauts, among them Yuri Gagarin, Valentina Tereshkova and the crews lost on Apollo 1, Challenger and Columbia.</p>
+<div class="figure"><p class="fig-h">The two faces of the Moon</p><p class="fig-sub">Every feature named after a person, on the near side (left) and the far side (right), coloured by the modern continent of the birthplace; dots with a heavy black ring mark people born in the former Soviet Union. Hover a dot.</p><div class="chart" id="discChart"></div></div>
+<p class="pull">On the far side, one name in five belongs to someone born in the former Soviet Union. On the near side, one in {{far.near_1in|int}}.</p>
+
+<h2><span class="n">08 · The most lunar towns</span>Paris, London, Saint Petersburg</h2>
+<p>The {{n_birthplaces|int}} birthplaces are led by the capitals of science. Paris has {{towns.0.n|int}} features across the four worlds ({{towns.0.moon|int}} on the Moon), London {{towns.1.n|int}}, Saint Petersburg {{towns.2.n|int}} and Moscow {{towns.3.n|int}}. Click a row to find the town on the map.</p>
+<div class="figure"><p class="fig-h">Birthplaces with the most features</p><p class="fig-sub">Features on each world named after people born there. Click a row.</p><div class="tablebox"><table class="tbl" id="townTable"></table></div></div>
+<p>{{multi.two_plus|int}} people are honoured on more than one world, mostly astronomers with a crater on both the Moon and Mars. Only {{multi.three.0|raw}}, {{multi.three.1|raw}} and {{multi.three.2|raw}} are on three.</p>
+
+<h2><span class="n">09 · Mars's villages</span>The small towns of Mars</h2>
+<p>Mars has a different rule for its small craters: they are named after towns and villages on Earth with fewer than 100,000 people. Wikidata gives the place and its coordinates for {{mars_towns.features|int}} Martian features, {{mars_towns.towns|int}} of them towns and villages, in {{mars_towns.countries|int}} countries. Turn on the layer on the Earth map, or pick Mars and click a grey ring. These places are far more evenly spread than the people of Mars: {{mars_towns.europe_pct|pc}} are in Europe against {{body.mars.europe_pct|pc}} of Mars's namesakes, {{mars_towns.asia_pct|pc}} are in Asia and {{mars_towns.africa_pct|pc}} in Africa. The United States has most ({{mars_towns.top.0.n|int}}), then India ({{mars_towns.top.1.n|int}}) and China ({{mars_towns.top.2.n|int}}); Britain's include Crewe, Corby, Maidstone and Kilkhampton. The Moon has a handful of Earth's places too, mostly its mountain ranges, named after the Alps, the Apennines, the Carpathians and the Caucasus.</p>
+<div class="figure"><p class="fig-h">Where the Mars place names come from</p><p class="fig-sub">Martian features named after a place on Earth, by continent, beside the continents of birth of the people Mars's features are named after. Hover a block.</p><div class="chart" id="marsChart"></div></div>
+
+<h2><span class="n">10 · How I did this</span>Methods and caveats</h2>
+<p><b>Data.</b> Everything comes from Wikidata (CC0), queried through the QLever engine: every item with coordinates on the Moon, Mercury, Venus or Mars that has a "named after" (P138) statement, with the namesake's birthplace (P19), the birthplace's coordinates and country, dates of birth and death, and occupations. I removed the duplicate rows the query makes for every type and occupation, and left out map quadrangles, which are named after a feature on them. That leaves {{source.features|int}} features, {{source.multi_namesake|int}} of them named after more than one person. A person with two birthplaces in Wikidata ({{source.multi_bp|int}} people) keeps the first with coordinates. Sex comes from a second Wikidata query (property P21); shares of women are among people recorded as female or male. Places on Earth that features are named after come from a third query, keeping namesakes with coordinates on Earth and leaving out languages.</p>
+<p><b>Countries and continents.</b> Each birthplace is placed in its modern country and continent (Natural Earth) by its coordinates, so Ptolemy counts for Egypt and Hilbert, born in Königsberg, for Russia. "Former Soviet Union" means the fifteen countries that were Soviet republics. {{source.people_unlocated|int}} of the {{source.people|int}} people have no located birthplace and are left out of the shares.</p>
+<p><b>Caveats.</b> Wikidata is not the IAU's Gazetteer of Planetary Nomenclature, the official list. Its coverage of "named after" is good for the Moon and Mercury and patchier for Mars, where most features are named after villages and rivers rather than people ({{mars_places.nonhuman|int}} of {{body.mars.features|int}} Mars features here, {{mars_places.pct|pc}}); Wikidata does not give those places' coordinates in this extract, so they are counted but not mapped. Wikidata has errors. It places the Scottish mathematician Colin Maclaurin's birth at a house called The Manse in Australia; I corrected this to Kilmodan in Argyll. I then checked every birthplace that Wikidata gives as a country, empire, state or large region, every birthplace whose Wikidata country disagrees with its map position, every missing name and sex value, and all the Martian features named after places on Earth. {{overrides_bp|int}} birthplaces are corrected (Edna Manley, for example, was born in Bournemouth, not Yorkshire, and Gavriil Tikhov in Belarus, not Kazakhstan); {{overrides_unk|int}} people whose birthplace is only a country or empire, or is disputed, are left off the map rather than placed at a country's centre; {{overrides_sex|int}} sex values, {{overrides_link|int}} wrong "named after" links, {{overrides_labels|int}} missing names and {{overrides_places|int}} place links (ships, a spacecraft, a duplicate and country links) are fixed. All are listed in small documented overrides files; some errors will remain. Crimea is counted as part of Ukraine. Occupations are uneven, and the Mars place list is only as complete as Wikidata.</p>
+<details><summary>Sources and licences</summary>
+<ul>
+<li>Wikidata contributors, Wikidata (CC0), queried with QLever (University of Freiburg). Vrandečić, D. and Krötzsch, M. (2014) Wikidata: a free collaborative knowledgebase. Communications of the ACM 57(10), 78 to 85.</li>
+<li>IAU Working Group for Planetary System Nomenclature, Gazetteer of Planetary Nomenclature (USGS Astrogeology), planetarynames.wr.usgs.gov, for the naming rules of each world.</li>
+<li>Whitaker, E. A. (1999) Mapping and Naming the Moon: A History of Lunar Cartography and Nomenclature. Cambridge University Press.</li>
+<li>Natural Earth (public domain) for countries and continents. Earth map: the Inked World style on OpenStreetMap data (ODbL) via OpenFreeMap. Moon and Mars imagery: {{meta.att|raw}}.</li>
+</ul></details>
+
+<div class="cta"><a class="p" href="https://doi.org/10.5281/zenodo.24055578">Read the paper</a><a href="https://github.com/Tristan-Hotham/moon-names">Data and code</a><a href="https://blog.tristanhotham.com/2026/10/31/moon-names/">Blog post</a></div>
+
+<footer>
+<p>Dr Tristan Hotham, Independent researcher. ORCID <a href="https://orcid.org/0000-0003-4931-9349">0000-0003-4931-9349</a>.</p>
+<p>Cite as: Hotham, T. (2026) Who's on the Moon? The birthplaces of the people the Moon, Mercury, Venus and Mars are named after. Zenodo. <a href="https://doi.org/10.5281/zenodo.24055578">https://doi.org/10.5281/zenodo.24055578</a></p>
+<p>Data: Wikidata (CC0). Text, figures and derived data CC BY 4.0; code MIT. Map data © OpenStreetMap contributors (ODbL); Natural Earth.</p>
+<p>I wrote the text, with drafting and editing assistance from Claude (Anthropic), which also helped prepare the analysis code. I reviewed and checked all text and results.</p>
+</footer>
+</div>
+<div class="tip" id="tip"></div>
+<button class="btn theme" id="theme" aria-label="Toggle dark mode">◐</button>
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="js/curated.js?v=1"></script>
+<script src="js/ink-palette.js?v=1"></script>
+<script src="js/ink-icons.js?v=1"></script>
+<script src="js/ink-houses.js?v=1"></script>
+<script src="js/ink-map.js?v=1"></script>
+<script src="js/ink-extras.js?v=1"></script>
+<script>
+const R = /*RESULTS*/;
+const fmt = n => n == null || n === "" ? "n/a" : Math.round(n).toLocaleString("en-GB");
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const $ = id => document.getElementById(id);
+const tip = $("tip");
+function showTip(h, x, y) { tip.innerHTML = h; tip.style.display = "block"; const w = tip.offsetWidth; x = Math.max(w / 2 + 8, Math.min(innerWidth - w / 2 - 8, x)); tip.style.left = x + scrollX + "px"; tip.style.top = y + scrollY + "px"; }
+function hideTip() { tip.style.display = "none"; }
+document.addEventListener("click", e => { if (!e.target.closest("svg")) hideTip(); });
+const NS = "http://www.w3.org/2000/svg";
+const el = (t, a, p) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; };
+const lbl = (svg, x, y, s, cls = "lab", anchor = "start") => { const t = el("text", { x, y, class: cls, "text-anchor": anchor }, svg); t.textContent = s; return t; };
+const hov = (n, h) => { n.addEventListener("mousemove", ev => showTip(h, ev.clientX, ev.clientY)); n.addEventListener("mouseleave", hideTip); n.addEventListener("click", ev => { ev.stopPropagation(); showTip(h, ev.clientX, ev.clientY); }); };
+const redraws = [];
+function resp(box, render) { let last = 0; const go = force => { const w = Math.max(280, Math.round(box.clientWidth)); if (!force && Math.abs(w - last) < 4) return; last = w; box.innerHTML = ""; render(w, w < 560); }; new ResizeObserver(() => go()).observe(box); go(); redraws.push(() => go(true)); }
+const isDark = () => { const r = document.documentElement; return r.dataset.theme ? r.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches; };
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const BODIES = [["moon", "The Moon", "#6E6A63"], ["mercury", "Mercury", "#8A5A2B"], ["venus", "Venus", "#C08A1E"], ["mars", "Mars", "#B0301F"]];
+const CONTS = ["Europe", "North America", "Asia", "South America", "Africa", "Oceania"], CCOL = ["#2F5FA7", "#C8322B", "#E0A11B", "#2E9A8C", "#7B57A8", "#B4532A"];
+const OCCK = Object.keys(R.occ_names);
+
+/* hero mark: a crescent with a crater, and a pin on a small globe */
+(function () {
+  const g = $("heroMark");
+  el("circle", { cx: 50, cy: 54, r: 38, fill: "#E9E3D3", stroke: "currentColor", "stroke-width": 2.4 }, g);
+  el("path", { d: "M50 16 A38 38 0 0 0 50 92 A26 38 0 0 1 50 16Z", fill: "#2B2119", opacity: .18 }, g);
+  [[62, 40, 8], [44, 66, 6], [66, 70, 4.5], [40, 38, 3.5]].forEach(([x, y, r]) => el("circle", { cx: x, cy: y, r, fill: "none", stroke: "currentColor", "stroke-width": 1.6 }, g));
+  el("circle", { cx: 98, cy: 98, r: 14, fill: "#DCE8F0", stroke: "currentColor", "stroke-width": 2 }, g);
+  el("path", { d: "M90 92 q6 -4 10 2 q4 5 8 1 M88 102 q7 4 14 -2", stroke: "#55803A", "stroke-width": 2, fill: "none" }, g);
+  el("path", { d: "M62 40 Q92 44 97 92", stroke: "#A3261B", "stroke-width": 1.8, fill: "none", "stroke-dasharray": "4 3" }, g);
+  el("circle", { cx: 97, cy: 93, r: 3.4, fill: "#A3261B" }, g);
+})();
+
+/* ---------- charts (from results) ---------- */
+function stack100(box, rows, keys, cols, names, title) {
+  resp(box, (w, sm) => {
+    const lw = sm ? 70 : 92, rh = 34, h = rows.length * (rh + 12) + 6, svg = el("svg", { viewBox: `0 0 ${w} ${h}`, role: "img", "aria-label": title }, box);
+    rows.forEach((r, k) => { const y = 4 + k * (rh + 12); let x = lw; const tot = keys.reduce((a, q) => a + (r.v[q] || 0), 0);
+      lbl(svg, lw - 8, y + rh / 2 + 4, r.label, "lab b", "end");
+      keys.forEach((q, j) => { const v = r.v[q] || 0; if (!v) return; const ww = (w - lw - 2) * v / tot;
+        const b = el("rect", { x, y, width: Math.max(.5, ww - 1), height: rh, fill: cols[j] }, svg);
+        if (ww > 38) lbl(svg, x + 5, y + rh / 2 + 4, Math.round(100 * v / tot) + "%", "lab s w");
+        hov(b, `<b>${esc(r.label)}: ${esc(names[j])}</b><br>${fmt(v)} of ${fmt(tot)} (${(100 * v / tot).toFixed(1)}%)`); x += ww; }); });
+  });
+}
+function contChart() {
+  const rows = BODIES.map(([b, n]) => ({ label: n.replace("The ", ""), v: Object.fromEntries(CONTS.map(c => [c, R.body[b].cont[c].n])) }));
+  stack100($("contChart"), rows, CONTS, CCOL, CONTS, "Stacked bars: continent of birth of namesakes on each world");
+  $("contLegend").innerHTML = CONTS.map((c, i) => `<span><i style="background:${CCOL[i]}"></i>${c}</span>`).join("");
+}
+function occChart() {
+  const ks = OCCK.filter(k => BODIES.some(([b]) => R.body[b].occ[k].n));
+  const rows = BODIES.map(([b, n]) => ({ label: n.replace("The ", ""), v: Object.fromEntries(ks.map(k => [k, R.body[b].occ[k].n])) }));
+  stack100($("occChart"), rows, ks, ks.map(k => R.occ_cols[k]), ks.map(k => R.occ_names[k]), "Stacked bars: what the namesakes on each world did");
+  $("occLegend").innerHTML = ks.map(k => `<span><i style="background:${R.occ_cols[k]}"></i>${esc(R.occ_names[k])}</span>`).join("");
+}
+function ctyChart() {
+  resp($("ctyChart"), (w, sm) => {
+    const cols = sm ? 1 : 2, pw = w / cols, n = 8, rh = 22, ph = n * rh + 34, rowsN = Math.ceil(BODIES.length / cols), h = rowsN * ph + 6;
+    const svg = el("svg", { viewBox: `0 0 ${w} ${h}`, role: "img", "aria-label": "Bar charts of the top countries of birth on each world" }, $("ctyChart"));
+    const mx = Math.max(...BODIES.map(([b]) => R.body[b].top[0].pct));
+    BODIES.forEach(([b, nm, c], k) => { const x0 = (k % cols) * pw, y0 = Math.floor(k / cols) * ph, lw = 118, x1 = x0 + pw - 52;
+      lbl(svg, x0, y0 + 16, `${nm.replace("The ", "")} (${fmt(R.body[b].located)})`, "lab b");
+      R.body[b].top.slice(0, n).forEach((r, i) => { const y = y0 + 26 + i * rh, ww = (x1 - x0 - lw) * r.pct / mx;
+        lbl(svg, x0 + lw - 6, y + 14, r.country.replace("United Kingdom", "UK").replace("United States", "US").replace("Czech Republic", "Czechia"), "lab s", "end");
+        const bb = el("rect", { x: x0 + lw, y: y + 3, width: Math.max(1, ww), height: rh - 7, fill: c, rx: 2 }, svg);
+        lbl(svg, x0 + lw + ww + 5, y + 14, Math.round(r.pct) + "%", "lab s b");
+        hov(bb, `<b>${esc(nm)}: ${esc(r.country)}</b><br>${r.n} features, ${r.pct}%`); }); });
+  });
+}
+function centChart() {
+  resp($("centChart"), (w, sm) => {
+    const C = []; for (let c = -6; c <= 20; c++) if (c !== 0) C.push(c);
+    const rowH = sm ? 74 : 86, lw = sm ? 62 : 76, h = BODIES.length * rowH + 30, svg = el("svg", { viewBox: `0 0 ${w} ${h}`, role: "img", "aria-label": "Column charts of namesakes by century of birth on each world" }, $("centChart"));
+    const cw = (w - lw - 4) / C.length;
+    const val = (b, c) => c === -6 ? Object.entries(R.body[b].cent).filter(([k]) => +k <= -6).reduce((a, [, v]) => a + v, 0) : (R.body[b].cent[c] || 0);
+    BODIES.forEach(([b, nm, col], k) => { const y0 = 6 + k * rowH, mx = Math.max(...C.map(c => val(b, c)));
+      lbl(svg, lw - 8, y0 + rowH - 18, nm.replace("The ", ""), "lab b", "end");
+      el("line", { x1: lw, x2: w - 4, y1: y0 + rowH - 14, y2: y0 + rowH - 14, stroke: css("--rule") }, svg);
+      C.forEach((c, i) => { const v = val(b, c); if (!v) return; const hh = (rowH - 22) * v / mx, x = lw + i * cw;
+        const r = el("rect", { x: x + 1, y: y0 + rowH - 14 - hh, width: Math.max(1, cw - 2), height: hh, fill: col }, svg);
+        const cn = c < 0 ? `${c === -6 ? "6th century BC or earlier" : -c + (-c === 1 ? "st" : -c === 2 ? "nd" : -c === 3 ? "rd" : "th") + " century BC"}` : `${c}${c === 1 || c === 21 ? "st" : c === 2 ? "nd" : c === 3 ? "rd" : "th"} century`;
+        hov(r, `<b>${esc(nm)}</b>, born in the ${cn}<br>${v} features`); }); });
+    [[-5, "5th c. BC"], [1, "1st c."], [10, "10th"], [15, "15th"], [19, "19th"]].forEach(([c, t]) => { const i = C.indexOf(c); lbl(svg, lw + i * cw + cw / 2, h - 8, t, "lab s m", "middle"); });
+  });
+}
+function womenChart() {
+  resp($("womenChart"), (w, sm) => {
+    const two = !sm, pw = two ? w / 2 : w, rh = 26, lw = 110, rows1 = BODIES.map(([b, n, c]) => ({ l: n.replace("The ", ""), v: R.women[b].pct, n: R.women[b].women, t: R.women[b].n, c })),
+      rows2 = R.women.by_birth_three.map(r => ({ l: r.label.replace("1900 to 1939", "1900 to 39").replace("1940 or later", "1940 on"), v: r.pct, n: r.women, t: r.n, c: "#A3261B" }));
+    const h = two ? 5 * rh + 30 : 10 * rh + 70, svg = el("svg", { viewBox: `0 0 ${w} ${h}`, role: "img", "aria-label": "Bar charts of the share of women among namesakes" }, $("womenChart"));
+    [[rows1, "By world"], [rows2, "Moon, Mercury, Mars: by birth"]].forEach(([rows, t], k) => { const x0 = (two ? k * pw : 0) + lw, y0 = two ? 0 : k * (5 * rh + 35), x1 = (two ? (k + 1) * pw : w) - 60;
+      lbl(svg, x0 - lw, y0 + 15, t, "lab b");
+      rows.forEach((r, i) => { const y = y0 + 24 + i * rh, ww = (x1 - x0) * r.v / 100; lbl(svg, x0 - 6, y + 14, r.l, "lab s", "end");
+        el("rect", { x: x0, y: y + 3, width: x1 - x0, height: rh - 8, fill: css("--rule") }, svg);
+        const b = el("rect", { x: x0, y: y + 3, width: Math.max(1, ww), height: rh - 8, fill: r.c }, svg); lbl(svg, x0 + Math.max(ww, 0) + 5, y + 14, r.v.toFixed(1) + "%", "lab s b");
+        hov(b, `<b>${esc(r.l)}</b><br>${r.n} women of ${r.t} (${r.v.toFixed(1)}%)`); }); });
+  });
+}
+function marsChart() {
+  const mp = R.mars_towns.cont, pp = Object.fromEntries(CONTS.map(c => [c, R.body.mars.cont[c].n]));
+  stack100($("marsChart"), [{ label: "Places", v: mp }, { label: "People", v: pp }], CONTS, CCOL, CONTS, "Stacked bars: continents of the places and of the people Mars's features are named after");
+}
+function townTable() {
+  const t = $("townTable");
+  t.innerHTML = `<thead><tr><th>Birthplace</th><th>Country</th><th class="r">All</th>${BODIES.map(b => `<th class="r">${b[1].replace("The ", "")}</th>`).join("")}</tr></thead><tbody>` +
+    R.towns.map((r, i) => `<tr data-k="${i}"><td>${esc(r.place)}</td><td>${esc(r.country)}</td><td class="r"><b>${r.n}</b></td>${BODIES.map(([b]) => `<td class="r">${r[b] || ""}</td>`).join("")}</tr>`).join("") + `</tbody>`;
+  t.querySelectorAll("tr[data-k]").forEach(r => r.onclick = () => { const x = R.towns[+r.dataset.k]; const p = PLACES && Object.values(PLACES).find(q => q.name === x.place && q.country === x.country); if (p) { toMap(); setTimeout(() => pickPlace(p.key, true), 350); } });
+}
+
+/* ---------- the two maps ---------- */
+let PLC = [], PLF = {};
+let SITE = null, P = [], F = [], PLACES = null, emap = null, bmap = null, eReady = false, bReady = false;
+const S = { body: "moon", col: "cont", fsel: null, psel: null, all: false };
+const LYDEF = { imagery: false, grat: true, names: true, nonhuman: true, sides: true, ebirth: true, etowns: true, modern: false, mountains: true, forests: true, names_e: true, borders: true, rivers: true };
+const LY = { ...LYDEF };
+try { Object.assign(LY, JSON.parse(localStorage.getItem("mn_layers") || "{}")); } catch (e) {}
+const saveLY = () => { try { localStorage.setItem("mn_layers", JSON.stringify(LY)); } catch (e) {} };
+const toMap = () => $("atlas").scrollIntoView({ behavior: "smooth", block: "start" });
+const pColor = p => !p ? "#BBB3A6" : S.col === "cont" ? (p.cont >= 0 ? CCOL[p.cont] : "#BBB3A6") : SITE.occ[p.occ][2];
+const bname = b => BODIES.find(x => x[0] === b)[1];
+const life = p => p.born == null ? "" : `${p.born < 0 ? -p.born + " BC" : p.born}${p.died != null ? " to " + (p.died < 0 ? -p.died + " BC" : p.died) : ""}`;
+const clampLat = la => Math.max(-84.5, Math.min(84.5, la));
+
+function buildData() {
+  const pc = SITE.pcols, fc = SITE.fcols;
+  P = SITE.people.map((r, i) => Object.assign(Object.fromEntries(pc.map((c, j) => [c, r[j]])), { i }));
+  F = SITE.features.map((r, i) => Object.assign(Object.fromEntries(fc.map((c, j) => [c, r[j]])), { i, b: SITE.bodies[r[2]][0] }));
+  P.forEach(p => { p.feats = []; p.key = p.lon != null ? p.lon.toFixed(3) + "," + p.lat.toFixed(3) : null; });
+  F.forEach(f => { if (f.p >= 0) P[f.p].feats.push(f.i); });
+  PLC = SITE.places.map(r => Object.fromEntries(SITE.pcols2.map((c, j) => [c, r[j]]))); PLC.forEach(q => { q.b = SITE.bodies[q.body][0]; (PLF[q.fid] = PLF[q.fid] || []).push(q); });
+  PLACES = {};
+  P.forEach(p => { if (!p.key) return; const q = PLACES[p.key] || (PLACES[p.key] = { key: p.key, name: p.bp, country: p.country, lon: p.lon, lat: p.lat, people: [] }); q.people.push(p.i); });
+}
+function bodyGeo() {
+  return { type: "FeatureCollection", features: F.filter(f => f.b === S.body && f.lon != null).map(f => { const p = f.p >= 0 ? P[f.p] : null;
+    return { type: "Feature", id: f.i, geometry: { type: "Point", coordinates: [f.lon, clampLat(f.lat)] }, properties: { n: f.name, d: f.diam || 0, h: p ? 1 : 0, c: pColor(p) } }; }) };
+}
+function placeGeo() {
+  const feats = [];
+  Object.values(PLACES).forEach(q => { const fs = q.people.flatMap(i => P[i].feats).filter(j => S.all || F[j].b === S.body); if (!fs.length) return;
+    const cnt = {}; fs.forEach(j => { const c = pColor(P[F[j].p]); cnt[c] = (cnt[c] || 0) + 1; });
+    const c = Object.entries(cnt).sort((a, b) => b[1] - a[1])[0][0];
+    feats.push({ type: "Feature", properties: { k: q.key, n: fs.length, c, nm: q.name }, geometry: { type: "Point", coordinates: [q.lon, q.lat] } }); });
+  feats.sort((a, b) => b.properties.n - a.properties.n);
+  return { type: "FeatureCollection", features: feats };
+}
+function grat() {
+  const fs = [];
+  for (let lo = -180; lo <= 180; lo += 30) { const c = []; for (let la = -85; la <= 85; la += 5) c.push([lo, la]); fs.push({ type: "Feature", properties: { side: Math.abs(lo) === 90 ? 1 : 0 }, geometry: { type: "LineString", coordinates: c } }); }
+  for (let la = -60; la <= 60; la += 30) { const c = []; for (let lo = -180; lo <= 180; lo += 5) c.push([lo, la]); fs.push({ type: "Feature", properties: { side: 0 }, geometry: { type: "LineString", coordinates: c } }); }
+  return { type: "FeatureCollection", features: fs };
+}
+const GLYPHS = location.href.replace(/[#?].*$/, "").replace(/[^/]*$/, "") + "fonts/{fontstack}/{range}.pbf";
+
+function initBody() {
+  bmap = new maplibregl.Map({ container: "bmap", attributionControl: false, renderWorldCopies: false, maxZoom: 8, minZoom: 0, dragRotate: false, pitchWithRotate: false, touchPitch: false,
+    center: [0, 10], zoom: 0.6,
+    style: { version: 8, glyphs: GLYPHS,
+      sources: { img: { type: "raster", tiles: [SITE.tiles.moon], tileSize: 256, maxzoom: 7, attribution: SITE.att }, grat: { type: "geojson", data: grat() },
+                 feat: { type: "geojson", data: { type: "FeatureCollection", features: [] } },
+                 sides: { type: "geojson", data: { type: "FeatureCollection", features: [{ type: "Feature", properties: { t: "NEAR SIDE" }, geometry: { type: "Point", coordinates: [0, 78] } }, { type: "Feature", properties: { t: "FAR SIDE" }, geometry: { type: "Point", coordinates: [135, 78] } }, { type: "Feature", properties: { t: "FAR SIDE" }, geometry: { type: "Point", coordinates: [-135, 78] } }] } } },
+      layers: [{ id: "bg", type: "background", paint: { "background-color": "#EDE3C8" } },
+        { id: "img", type: "raster", source: "img", layout: { visibility: "none" }, paint: { "raster-opacity": .9, "raster-saturation": -.3 } },
+        { id: "grat", type: "line", source: "grat", filter: ["==", ["get", "side"], 0], paint: { "line-color": "#8C7A58", "line-opacity": .45, "line-width": .7 } },
+        { id: "side", type: "line", source: "grat", filter: ["==", ["get", "side"], 1], paint: { "line-color": "#A3261B", "line-opacity": .75, "line-width": 1.4, "line-dasharray": [3, 2] } },
+        { id: "sidelab", type: "symbol", source: "sides", layout: { "text-field": ["get", "t"], "text-font": ["Ink Caps"], "text-size": 13, "text-letter-spacing": .2 }, paint: { "text-color": "#A3261B", "text-halo-color": "#F3E9CF", "text-halo-width": 1.6 } },
+        { id: "fh", type: "circle", source: "feat", filter: ["==", ["get", "h"], 0], paint: { "circle-radius": ["interpolate", ["linear"], ["zoom"], 0, 2, 4, 4.5, 7, 8], "circle-color": "rgba(0,0,0,0)", "circle-stroke-color": "#8C8478", "circle-stroke-width": 1.1 } },
+        { id: "fp", type: "circle", source: "feat", filter: ["==", ["get", "h"], 1], paint: {
+          "circle-radius": ["interpolate", ["linear"], ["zoom"], 0, ["*", .55, ["interpolate", ["linear"], ["get", "d"], 0, 2.4, 20, 3, 100, 4.6, 300, 7, 1000, 10]], 3, ["interpolate", ["linear"], ["get", "d"], 0, 2.4, 20, 3, 100, 4.6, 300, 7, 1000, 10], 6, ["*", 1.8, ["interpolate", ["linear"], ["get", "d"], 0, 2.4, 20, 3, 100, 4.6, 300, 7, 1000, 10]]],
+          "circle-color": ["get", "c"], "circle-stroke-color": "#2B2119", "circle-stroke-width": .6, "circle-opacity": .9 } },
+        { id: "fsel", type: "circle", source: "feat", filter: ["==", ["id"], -1], paint: { "circle-radius": 11, "circle-color": "rgba(0,0,0,0)", "circle-stroke-color": "#A3261B", "circle-stroke-width": 2.6 } },
+        { id: "fnames", type: "symbol", source: "feat", minzoom: 1.5, layout: { "text-field": ["get", "n"], "text-font": ["Ink Italic"], "text-size": ["interpolate", ["linear"], ["zoom"], 1.5, 10.5, 6, 14],
+          "text-variable-anchor": ["left", "right", "top", "bottom"], "text-radial-offset": .7, "symbol-sort-key": ["-", 0, ["get", "d"]], "text-padding": 2 }, paint: { "text-color": "#2B2119", "text-halo-color": "rgba(243,233,207,.92)", "text-halo-width": 1.4 } }] } });
+  bmap.addControl(new maplibregl.AttributionControl({ compact: true }), "bottom-right");
+  bmap.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
+  bmap.touchZoomRotate.disableRotation();
+  let tileErr = 0;
+  bmap.on("error", e => { if (LY.imagery && ++tileErr === 1) $("bnote").innerHTML = "Imagery tiles did not load; the parchment map still works."; });
+  bmap.on("load", () => { bReady = true; foldAttr(bmap); setBodyData(); applyLayers(); homeBody(); });
+  bmap.on("click", "fp", e => { e.preventDefault(); pickFeature(e.features[0].id, false, true); });
+  bmap.on("click", "fh", e => { if (e.defaultPrevented) return; pickFeature(e.features[0].id, false, true); });
+  bmap.on("mouseenter", "fp", () => bmap.getCanvas().style.cursor = "pointer"); bmap.on("mouseleave", "fp", () => bmap.getCanvas().style.cursor = "");
+  layerPanel(bmap, "body");
+}
+function homeBody() { if (bmap) bmap.fitBounds([[-180, -72], [180, 76]], { padding: 6, animate: false }); }
+function setBodyData() { if (!bReady) return; bmap.getSource("feat").setData(bodyGeo()); const fid = S.fsel != null && F[S.fsel].b === S.body ? S.fsel : -1; bmap.setFilter("fsel", ["==", ["id"], fid]); }
+function initEarth() {
+  const opts = { workerConfig: { heritage: "", hills: "", places: "" }, mapOptions: { center: [12, 35], zoom: innerWidth < 600 ? 0.4 : 0.9, renderWorldCopies: false } };
+  InkMap.create("emap", opts).then(m => {
+    emap = m; eReady = true; foldAttr(emap);
+    emap.addControl(new maplibregl.NavigationControl({ showCompass: false }), "bottom-right");
+    if (InkMap.setWinter) InkMap.setWinter(emap, false);
+    ["heritage", "flight", "animals", "farms", "towns", "roads"].forEach(g => { try { InkMap.setGroup(emap, g, false); } catch (e) {} });
+    const tone = () => InkMap.setSeaTone && InkMap.setSeaTone(emap, isDark()); tone();
+    emap.addSource("bp", { type: "geojson", data: placeGeo(), attribution: "Namesakes: <a href='https://www.wikidata.org/' target='_blank'>Wikidata</a> (CC0)" });
+    emap.addLayer({ id: "bp", type: "circle", source: "bp", paint: {
+      "circle-radius": ["interpolate", ["linear"], ["zoom"], 0, ["*", .8, ["+", 2.2, ["*", 2.1, ["sqrt", ["get", "n"]]]]], 4, ["*", 1.15, ["+", 2.2, ["*", 2.1, ["sqrt", ["get", "n"]]]]], 8, ["*", 1.6, ["+", 2.2, ["*", 2.1, ["sqrt", ["get", "n"]]]]]],
+      "circle-color": ["get", "c"], "circle-stroke-color": "#2B2119", "circle-stroke-width": .8, "circle-opacity": .88 } });
+    emap.addLayer({ id: "bpsel", type: "circle", source: "bp", filter: ["==", ["get", "k"], ""], paint: { "circle-radius": ["+", 7, ["*", 2.4, ["sqrt", ["get", "n"]]]], "circle-color": "rgba(0,0,0,0)", "circle-stroke-color": "#A3261B", "circle-stroke-width": 3 } });
+    emap.addSource("tw", { type: "geojson", data: townGeo() });
+    emap.addLayer({ id: "tw", type: "circle", source: "tw", paint: { "circle-radius": ["interpolate", ["linear"], ["zoom"], 0, 2.6, 5, 4.5, 9, 7], "circle-color": "#FBF5E4", "circle-stroke-color": "#A3261B", "circle-stroke-width": 1.6 } });
+    emap.on("click", "tw", e => { e.preventDefault(); townPop(e.features[0].properties.k, e.lngLat); });
+    emap.on("mouseenter", "tw", () => emap.getCanvas().style.cursor = "pointer"); emap.on("mouseleave", "tw", () => emap.getCanvas().style.cursor = "");
+    emap.addLayer({ id: "bpname", type: "symbol", source: "bp", minzoom: 3.2, layout: { "text-field": ["get", "nm"], "text-font": ["Ink Italic"], "text-size": 13, "text-variable-anchor": ["left", "right", "top"], "text-radial-offset": .9, "symbol-sort-key": ["-", 0, ["get", "n"]] }, paint: { "text-color": "#2B2119", "text-halo-color": "rgba(246,238,216,.95)", "text-halo-width": 1.6 } });
+    emap.on("click", "bp", e => { e.preventDefault(); pickPlace(e.features[0].properties.k, false); });
+    emap.on("mouseenter", "bp", () => emap.getCanvas().style.cursor = "pointer"); emap.on("mouseleave", "bp", () => emap.getCanvas().style.cursor = "");
+    layerPanel(emap, "earth"); applyLayers(); counts();
+  }).catch(e => { console.error(e); $("enote").textContent = "The Earth map could not load: " + e.message; });
+}
+function townGeo() { const g = {}; PLC.forEach(q => { if (q.lon == null || !(S.all || q.b === S.body)) return; const k = q.nid + ":" + q.lon; (g[k] = g[k] || { k, lon: q.lon, lat: q.lat }); });
+  return { type: "FeatureCollection", features: Object.values(g).map(x => ({ type: "Feature", properties: { k: x.k }, geometry: { type: "Point", coordinates: [x.lon, x.lat] } })) }; }
+function townPop(k, ll) { const qs = PLC.filter(q => q.nid + ":" + q.lon === k), q0 = qs[0];
+  const items = qs.map(q => { const fi = F.findIndex(f => f.fid === q.fid); return `<li>${fi >= 0 ? `<span class="go" data-f="${fi}">${esc(q.feature)}</span>` : esc(q.feature)} <span class="k">(${esc(bname(q.b).replace("The ", ""))})</span></li>`; }).join("");
+  if (epop) epop.remove(); epop = new maplibregl.Popup({ maxWidth: "300px", focusAfterOpen: false }).setLngLat(ll || [q0.lon, q0.lat]).setHTML(`<b class="t">${esc(q0.place || "Unnamed place")}</b><span class="k">${esc(q0.kind)}${q0.country ? " · " + esc(q0.country) : ""}</span><br><span class="k">Named after it:</span><ul>${items}</ul><a href="https://www.wikidata.org/wiki/${q0.nid}" target="_blank" rel="noopener">Place on Wikidata</a>`).addTo(emap); wirePopup(epop); }
+function setPlaceData() { if (!eReady) return; emap.getSource("bp").setData(placeGeo()); if (emap.getSource("tw")) emap.getSource("tw").setData(townGeo()); emap.setFilter("bpsel", ["==", ["get", "k"], S.psel || ""]); counts(); }
+function counts() {
+  const fs = F.filter(f => f.b === S.body), hu = fs.filter(f => f.p >= 0);
+  $("bcount").textContent = `${fmt(new Set(fs.map(f => f.fid)).size)} features, ${fmt(hu.length)} after people`;
+  if (PLACES) $("ecount").textContent = `${fmt(placeGeo().features.length)} birthplaces${S.all ? ", all four worlds" : ""}`;
+}
+
+/* ---------- picking ---------- */
+let bpop = null, epop = null;
+function featHTML(f) {
+  const p = f.p >= 0 ? P[f.p] : null, kind = SITE.kinds[f.kind][1].replace(/s$/, "").replace("Seas, plains and region", "Sea, plain or region").replace("Scarps, ridges and corona", "Scarp, ridge or corona").replace("Mountains and dome", "Mountain or dome").replace("Valleys and rille", "Valley or rille");
+  let h = `<b class="t">${esc(f.name)}</b><span class="k">${esc(kind)} on ${esc(bname(f.b).replace("The ", "the "))}${f.diam ? `, ${f.diam} km across` : ""}${f.b === "moon" && f.far === 1 ? ", far side" : f.b === "moon" && f.far === 0 ? ", near side" : ""}</span><br>`;
+  if (p) h += `<span class="k">Named after</span> <b>${esc(p.name)}</b>${p.born != null ? ` (${life(p)})` : ""}<br>${p.occs ? `<span class="k">${esc(p.occs.split("; ").slice(0, 3).join(", "))}</span><br>` : ""}<span class="k">Born in</span> ${p.bp ? esc(p.bp) + (p.country ? ", " + esc(p.country) : "") : "no birthplace in Wikidata"}<br>`;
+  else if (PLF[f.fid]) { const q = PLF[f.fid][0]; h += `<span class="k">Named after</span> <b>${esc(q.place || f.namesake)}</b>, ${esc(q.kind)}${q.country ? " in " + esc(q.country) : ""}<br>`; }
+  else h += `<span class="k">Named after</span> ${esc(f.namesake || "something other than a person")}<br>`;
+  h += `<a href="https://www.wikidata.org/wiki/${f.fid}" target="_blank" rel="noopener">Feature on Wikidata</a>${p ? ` · <a href="https://www.wikidata.org/wiki/${p.pid}" target="_blank" rel="noopener">Person</a>` : ""}`;
+  if (p && p.key) h += `<br><span class="flylink" data-fly="${p.key}">Fly to ${esc(p.bp)} on Earth</span>`;
+  else if (PLF[f.fid] && PLF[f.fid][0].lon != null) { const q = PLF[f.fid][0]; h += `<br><span class="flylink" data-town="${q.nid}:${q.lon}">Fly to ${esc(q.place || "it")} on Earth</span>`; }
+  return h;
+}
+function placeHTML(q) {
+  const items = q.people.flatMap(i => P[i].feats.map(j => [P[i], F[j]])).sort((a, b) => BODIES.findIndex(x => x[0] === a[1].b) - BODIES.findIndex(x => x[0] === b[1].b));
+  return `<b class="t">${esc(q.name)}</b><span class="k">${esc(q.country)} · ${items.length} feature${items.length > 1 ? "s" : ""} on other worlds</span><ul>` +
+    items.slice(0, 40).map(([p, f]) => `<li><span class="go" data-f="${f.i}">${esc(f.name)}</span> <span class="k">(${esc(bname(f.b).replace("The ", ""))})</span>: ${esc(p.name)}${p.born != null ? `, b. ${p.born < 0 ? -p.born + " BC" : p.born}` : ""}</li>`).join("") + (items.length > 40 ? `<li class="k">and ${items.length - 40} more</li>` : "") + `</ul><span class="k">Click a name to see it on its world.</span>`;
+}
+function wirePopup(pop) {
+  const n = pop.getElement(); if (!n) return;
+  n.querySelectorAll("[data-fly]").forEach(x => x.onclick = () => pickPlace(x.dataset.fly, true, true));
+  n.querySelectorAll("[data-town]").forEach(x => x.onclick = () => { const q = PLC.find(q => q.nid + ":" + q.lon === x.dataset.town); if (!q || !eReady) return; LY.etowns = true; applyLayers(); syncPanels(); emap.flyTo({ center: [q.lon, q.lat], zoom: Math.max(emap.getZoom(), 5), duration: 1100 }); setTimeout(() => townPop(x.dataset.town), 1150); });
+  n.querySelectorAll("[data-f]").forEach(x => x.onclick = () => pickFeature(+x.dataset.f, true, false));
+}
+function pickFeature(i, fly, followEarth) {
+  const f = F[i]; if (!f) return;
+  if (f.b !== S.body) setBody(f.b, true);
+  S.fsel = i; if (bReady) bmap.setFilter("fsel", ["==", ["id"], i]);
+  if (bReady && f.lon != null) {
+    if (fly) bmap.flyTo({ center: [f.lon, clampLat(f.lat)], zoom: Math.max(bmap.getZoom(), 3.2), duration: 900 });
+    if (bpop) bpop.remove();
+    bpop = new maplibregl.Popup({ maxWidth: "300px", focusAfterOpen: false }).setLngLat([f.lon, clampLat(f.lat)]).setHTML(featHTML(f)).addTo(bmap); wirePopup(bpop);
+  }
+  const p = f.p >= 0 ? P[f.p] : null;
+  if (p && p.key && followEarth) { S.psel = p.key; if (eReady) { emap.setFilter("bpsel", ["==", ["get", "k"], p.key]); emap.flyTo({ center: [p.lon, p.lat], zoom: Math.max(emap.getZoom(), 4.2), duration: 1100 }); } }
+  card(f, p);
+}
+function pickPlace(key, fly, fromBody) {
+  const q = PLACES[key]; if (!q) return;
+  S.psel = key;
+  if (!S.all && !q.people.some(i => P[i].feats.some(j => F[j].b === S.body))) { S.all = true; LY.allw = true; setPlaceData(); syncPanels(); }
+  if (eReady) { emap.setFilter("bpsel", ["==", ["get", "k"], key]);
+    if (fly) emap.flyTo({ center: [q.lon, q.lat], zoom: Math.max(emap.getZoom(), 4.6), duration: 1100 });
+    if (epop) epop.remove();
+    epop = new maplibregl.Popup({ maxWidth: "300px", focusAfterOpen: false }).setLngLat([q.lon, q.lat]).setHTML(placeHTML(q)).addTo(emap); wirePopup(epop); }
+  if (!fromBody) { const first = q.people.flatMap(i => P[i].feats).find(j => F[j].b === S.body);
+    if (bpop) bpop.remove();
+    if (first != null) { const f = F[first]; S.fsel = first; if (bReady) { bmap.setFilter("fsel", ["==", ["id"], first]); if (f.lon != null) bmap.flyTo({ center: [f.lon, clampLat(f.lat)], zoom: Math.max(bmap.getZoom(), 2.5), duration: 900 }); } card(f, P[f.p]); }
+    else { S.fsel = null; if (bReady) bmap.setFilter("fsel", ["==", ["id"], -1]); card(null, P[q.people[0]], q); } }
+}
+function card(f, p, q) {
+  const c = $("linkcard");
+  if (!f && !p) { c.innerHTML = `<div><span class="k">Click a feature on the left, or a birthplace on the right.</span></div><div class="arrow">&harr;</div><div><span class="k">Try Copernicus, Gagarin, Tolstoj on Mercury or Paris.</span></div>`; return; }
+  const left = f ? `<b>${esc(f.name)}</b><br><span class="k">${esc(bname(f.b))}${f.diam ? `, ${f.diam} km` : ""}</span>` : `<span class="k">No feature on ${esc(bname(S.body).replace("The ", "the "))}</span>`;
+  const right = p ? `<b>${esc(p.name)}</b>${p.born != null ? ` <span class="k">${life(p)}</span>` : ""}<br><span class="k">born in ${esc(p.bp || "an unknown place")}${p.country ? ", " + esc(p.country) : ""}</span>` : `<span class="k">Named after ${esc(f.namesake || "something other than a person")}</span>`;
+  c.innerHTML = `<div>${left}</div><div class="arrow">&harr;</div><div>${right}</div>`;
+}
+
+/* ---------- controls ---------- */
+function setBody(b, keep) {
+  S.body = b; if (!keep) { S.fsel = null; card(null, null); } if (bpop && !keep) bpop.remove();
+  document.querySelectorAll("#bodyRow .btn").forEach(x => x.setAttribute("aria-pressed", x.dataset.b === b));
+  $("btitle").textContent = bname(b);
+  $("bmap").style.background = { moon: "#E9E4D6", mercury: "#EADBC4", venus: "#F0DFB8", mars: "#EED3BF" }[b];
+  if (bReady) { const has = !!SITE.tiles[b]; bmap.setPaintProperty("bg", "background-color", { moon: "#E9E4D6", mercury: "#EADBC4", venus: "#F0DFB8", mars: "#EED3BF" }[b]);
+    if (has) bmap.getSource("img").setTiles([SITE.tiles[b]]); bmap.setLayoutProperty("img", "visibility", LY.imagery && has ? "visible" : "none");
+    ["side", "sidelab"].forEach(l => bmap.setLayoutProperty(l, "visibility", LY.sides && b === "moon" ? "visible" : "none"));
+    setBodyData(); if (!keep) homeBody(); }
+  setPlaceData(); legend(); counts(); syncPanels();
+}
+function legend() {
+  const lg = $("legend");
+  const items = S.col === "cont" ? CONTS.map((c, i) => [CCOL[i], c]) : SITE.occ.filter(o => o[0] !== "unknown").map(o => [o[2], o[1]]);
+  lg.innerHTML = items.map(([c, n]) => `<span><i style="background:${c}"></i>${esc(n)}</span>`).join("") + `<span><i style="background:#FBF5E4;border:1.6px solid #A3261B;border-radius:50%"></i>Place on Earth a feature is named after</span><span><i style="background:transparent;border:1.4px solid #8C8478"></i>Not named after a person</span><span><i style="background:#BBB3A6"></i>Birthplace not known</span>`;
+}
+function layerPanel(map, which) {
+  const d = document.createElement("div"); d.className = "maplibregl-ctrl lyrCtl";
+  const rows = which === "body"
+    ? `<h5>This world</h5><label><input type="checkbox" data-k="names"> Feature names</label><label><input type="checkbox" data-k="nonhuman"> Features not named after people</label><label><input type="checkbox" data-k="grat"> Graticule (30° grid)</label><label><input type="checkbox" data-k="sides"> Near and far side (Moon)</label><label><input type="checkbox" data-k="imagery"> NASA and USGS imagery (Moon and Mars)</label>`
+    : `<h5>On Earth</h5><label><input type="checkbox" data-k="ebirth"> Birthplaces</label><label><input type="checkbox" data-k="etowns"> Places features are named after</label><label><input type="checkbox" data-k="allw"> All four worlds at once</label><h5>The inked map</h5><label><input type="checkbox" data-k="mountains"> Ink mountains and hills</label><label><input type="checkbox" data-k="forests"> Forests and moor</label><label><input type="checkbox" data-k="rivers"> Rivers and lakes</label><label><input type="checkbox" data-k="names_e"> Place names</label><label><input type="checkbox" data-k="borders"> Borders</label><label><input type="checkbox" data-k="modern"> Plain modern map</label>`;
+  d.innerHTML = `<button class="lyrBtn" aria-expanded="false">Map layers</button><div class="lyrPanel" hidden>${rows}<button class="reset">Reset layers</button></div>`;
+  ["click", "dblclick", "mousedown", "touchstart", "wheel"].forEach(t => d.addEventListener(t, e => e.stopPropagation(), { passive: t !== "click" }));
+  map.addControl({ onAdd() { return d; }, onRemove() { d.remove(); } }, "top-left");
+  const btn = d.querySelector(".lyrBtn"), pan = d.querySelector(".lyrPanel");
+  btn.onclick = () => { const o = pan.hidden; pan.hidden = !o; btn.setAttribute("aria-expanded", o); };
+  pan.querySelectorAll("[data-k]").forEach(i => i.addEventListener("change", () => { LY[i.dataset.k] = i.checked; if (i.dataset.k === "allw") { S.all = i.checked; setPlaceData(); } saveLY(); applyLayers(); }));
+  pan.querySelector(".reset").onclick = () => { Object.assign(LY, LYDEF); S.all = false; saveLY(); syncPanels(); applyLayers(); setPlaceData(); };
+  syncPanels();
+}
+function syncPanels() { LY.allw = S.all; document.querySelectorAll(".lyrPanel [data-k]").forEach(i => i.checked = !!LY[i.dataset.k]); }
+function applyLayers() {
+  if (bReady) { const v = x => x ? "visible" : "none";
+    bmap.setLayoutProperty("fnames", "visibility", v(LY.names)); bmap.setLayoutProperty("fh", "visibility", v(LY.nonhuman)); bmap.setLayoutProperty("grat", "visibility", v(LY.grat));
+    ["side", "sidelab"].forEach(l => bmap.setLayoutProperty(l, "visibility", v(LY.sides && S.body === "moon")));
+    bmap.setLayoutProperty("img", "visibility", v(LY.imagery && !!SITE.tiles[S.body]));
+    $("bnote").innerHTML = LY.imagery && !SITE.tiles[S.body] ? "No open imagery tiles for " + esc(bname(S.body)) + "; the parchment map is shown." : ""; }
+  if (eReady) { const v = x => x ? "visible" : "none";
+    ["bp", "bpsel", "bpname"].forEach(l => emap.setLayoutProperty(l, "visibility", v(LY.ebirth)));
+    if (emap.getLayer("tw")) emap.setLayoutProperty("tw", "visibility", v(LY.etowns));
+    const m = LY.modern;
+    [["mountains", LY.mountains], ["forests", LY.forests], ["rivers", LY.rivers], ["names", LY.names_e], ["borders", LY.borders]].forEach(([g, on]) => { try { InkMap.setGroup(emap, g, on && !(m && ["mountains", "forests"].includes(g))); } catch (e) {} });
+    try { InkMap.setGroup(emap, "paper", !m); InkMap.setGroup(emap, "modern", m); InkMap.setGroup(emap, "coast", !m); } catch (e) {} }
+}
+function search() {
+  const q = $("q"), sug = $("sug");
+  const norm = s => String(s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  const idx = [];
+  F.forEach(f => idx.push([norm(f.name), `${esc(f.name)} <span>${esc(bname(f.b).replace("The ", ""))}${f.p >= 0 ? ", after " + esc(P[f.p].name) : ""}</span>`, () => pickFeature(f.i, true, true)]));
+  P.forEach(p => { if (p.feats.length) idx.push([norm(p.name), `${esc(p.name)} <span>person, born ${esc(p.bp || "?")}</span>`, () => pickFeature(p.feats[0], true, true)]); });
+  PLC.forEach(q => { if (q.place && q.lon != null) idx.push([norm(q.place), `${esc(q.place)} <span>${esc(q.kind)}, ${esc(q.country)}: ${esc(bname(q.b).replace("The ", ""))} feature ${esc(q.feature)}</span>`, () => { const fi = F.findIndex(f => f.fid === q.fid); if (fi >= 0) pickFeature(fi, true, false); if (eReady) { emap.flyTo({ center: [q.lon, q.lat], zoom: Math.max(emap.getZoom(), 5), duration: 1100 }); setTimeout(() => townPop(q.nid + ":" + q.lon), 1150); } }]); });
+  Object.values(PLACES).forEach(x => idx.push([norm(x.name), `${esc(x.name)} <span>birthplace, ${esc(x.country)}, ${x.people.length} people</span>`, () => pickPlace(x.key, true)]));
+  let hits = [], sel = -1;
+  const show = () => { sug.innerHTML = hits.map((h, i) => `<li role="option" aria-selected="${i === sel}" data-i="${i}">${h[1]}</li>`).join(""); sug.style.display = hits.length ? "block" : "none";
+    sug.querySelectorAll("li").forEach(li => li.onmousedown = e => { e.preventDefault(); go(+li.dataset.i); }); };
+  const go = i => { const h = hits[i]; if (!h) return; sug.style.display = "none"; q.blur(); toMap(); setTimeout(h[2], 300); };
+  q.addEventListener("input", () => { const s = norm(q.value.trim()); sel = -1; if (s.length < 2) { hits = []; show(); return; }
+    hits = idx.filter(x => x[0].startsWith(s)).concat(idx.filter(x => !x[0].startsWith(s) && x[0].includes(s))).slice(0, 12); show(); });
+  q.addEventListener("keydown", e => { if (e.key === "ArrowDown") { sel = Math.min(hits.length - 1, sel + 1); show(); e.preventDefault(); } else if (e.key === "ArrowUp") { sel = Math.max(0, sel - 1); show(); e.preventDefault(); } else if (e.key === "Enter") go(sel < 0 ? 0 : sel); else if (e.key === "Escape") { sug.style.display = "none"; } });
+  q.addEventListener("blur", () => setTimeout(() => sug.style.display = "none", 150));
+}
+
+/* the near and far side discs (needs the page data) */
+function discChart() {
+  const sov = new Set(["Russia", "Ukraine", "Belarus", "Kazakhstan", "Uzbekistan", "Turkmenistan", "Kyrgyzstan", "Tajikistan", "Azerbaijan", "Armenia", "Georgia", "Moldova", "Lithuania", "Latvia", "Estonia"]);
+  const fs = F.filter(f => f.b === "moon" && f.p >= 0 && f.lon != null);
+  resp($("discChart"), (w, sm) => {
+    const two = w >= 520, r = two ? Math.min(w / 4 - 14, 200) : Math.min(w / 2 - 14, 170), h = two ? 2 * r + 40 : 4 * r + 70;
+    const svg = el("svg", { viewBox: `0 0 ${w} ${h}`, role: "img", "aria-label": "Orthographic views of the near and far sides of the Moon with every feature named after a person" }, $("discChart"));
+    [[0, "Near side"], [180, "Far side"]].forEach(([lon0, t], k) => {
+      const cx = two ? w / 4 + k * w / 2 : w / 2, cy = two ? r + 26 : r + 26 + k * (2 * r + 34);
+      el("circle", { cx, cy, r, fill: "#ECE6D6", stroke: "#2B2119", "stroke-width": 1.4 }, svg);
+      for (let la = -60; la <= 60; la += 30) { const pts = []; for (let lo = -90; lo <= 90; lo += 5) { const ll = lo * Math.PI / 180, ph = la * Math.PI / 180; pts.push([cx + r * Math.cos(ph) * Math.sin(ll), cy - r * Math.sin(ph)]); } el("polyline", { points: pts.map(p => p.join(",")).join(" "), fill: "none", stroke: "#B9AC8E", "stroke-width": .6 }, svg); }
+      for (let lo = -60; lo <= 60; lo += 30) { const pts = []; for (let la = -90; la <= 90; la += 5) { const ll = lo * Math.PI / 180, ph = la * Math.PI / 180; pts.push([cx + r * Math.cos(ph) * Math.sin(ll), cy - r * Math.sin(ph)]); } el("polyline", { points: pts.map(p => p.join(",")).join(" "), fill: "none", stroke: "#B9AC8E", "stroke-width": .6 }, svg); }
+      lbl(svg, cx, cy - r - 8, t, "lab b", "middle");
+      fs.forEach(f => { let dl = ((f.lon - lon0 + 540) % 360) - 180; if (Math.abs(dl) > 90) return; const ll = dl * Math.PI / 180, ph = f.lat * Math.PI / 180;
+        const x = cx + r * Math.cos(ph) * Math.sin(ll), y = cy - r * Math.sin(ph), p = P[f.p], s = sov.has(p.country);
+        const c = el("circle", { cx: x, cy: y, r: s ? 3.6 : 2.3, fill: p.cont >= 0 ? CCOL[p.cont] : "#BBB3A6", stroke: "#2B2119", "stroke-width": s ? 2 : .4, opacity: .92 }, svg);
+        hov(c, `<b>${esc(f.name)}</b><br>${esc(p.name)}, born ${esc(p.bp)}${p.country ? ", " + esc(p.country) : ""}`); });
+    });
+  });
+}
+
+function foldAttr(m) { const go = () => m.getContainer().querySelectorAll(".maplibregl-ctrl-attrib.maplibregl-compact").forEach(a => { a.classList.remove("maplibregl-compact-show"); a.removeAttribute("open"); }); m.once("idle", go); go(); }
+function boot() {
+  contChart(); occChart(); ctyChart(); centChart(); womenChart(); marsChart();
+  BODIES.forEach(([b, n, c]) => { const x = document.createElement("button"); x.className = "btn"; x.dataset.b = b; x.setAttribute("aria-pressed", b === S.body); x.innerHTML = `<i style="background:${c}"></i>${n.replace("The ", "")}`; x.onclick = () => setBody(b); $("bodyRow").appendChild(x); });
+  document.querySelectorAll("#colRow .btn").forEach(b => b.onclick = () => { S.col = b.dataset.c; document.querySelectorAll("#colRow .btn").forEach(x => x.setAttribute("aria-pressed", x === b)); setBodyData(); setPlaceData(); legend(); });
+  legend(); card(null, null);
+  fetch("data/site.json").then(r => r.json()).then(s => {
+    SITE = s; buildData(); townTable(); discChart(); search();
+    if (!window.maplibregl) { $("bnote").textContent = "The map library did not load."; return; }
+    try { initBody(); } catch (e) { console.error(e); $("bnote").textContent = "The map could not load."; }
+    initEarth(); counts();
+  }).catch(e => { console.error(e); $("bnote").textContent = "The page data did not load."; });
+}
+$("theme").onclick = () => { const r = document.documentElement; r.dataset.theme = isDark() ? "light" : "dark"; redraws.forEach(f => f()); if (emap && InkMap.setSeaTone) InkMap.setSeaTone(emap, isDark()); };
+boot();
+</script>
+/*FULLSCREEN*/
+<script src="https://maps.tristanhotham.com/assets/site-nav.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,1476 @@
+{
+ "meta": {
+  "page": "https://maps.tristanhotham.com/moon-names/",
+  "repo": "https://github.com/Tristan-Hotham/moon-names",
+  "att": "OpenPlanetaryMap basemaps (OpenPlanetary), from NASA and USGS data"
+ },
+ "source": {
+  "rows": 19194,
+  "features": 3471,
+  "pairs": 3518,
+  "quad": 90,
+  "human_pairs": 2718,
+  "people": 2560,
+  "people_located": 2416,
+  "people_unlocated": 144,
+  "located_pairs": 2574,
+  "located_pct": 94.7,
+  "multi_namesake": 40,
+  "multi_bp": 52,
+  "no_coords": 20,
+  "no_label": 118
+ },
+ "body": {
+  "moon": {
+   "name": "Moon",
+   "features": 1847,
+   "human_features": 1582,
+   "human_pct": 85.65,
+   "namings": 1614,
+   "located": 1548,
+   "people": 1599,
+   "cont": {
+    "Europe": {
+     "n": 1165,
+     "pct": 75.26
+    },
+    "North America": {
+     "n": 250,
+     "pct": 16.15
+    },
+    "Asia": {
+     "n": 102,
+     "pct": 6.59
+    },
+    "South America": {
+     "n": 6,
+     "pct": 0.39
+    },
+    "Africa": {
+     "n": 19,
+     "pct": 1.23
+    },
+    "Oceania": {
+     "n": 6,
+     "pct": 0.39
+    }
+   },
+   "europe_pct": 75.26,
+   "top": [
+    {
+     "country": "United States",
+     "n": 234,
+     "pct": 15.12
+    },
+    {
+     "country": "Germany",
+     "n": 202,
+     "pct": 13.05
+    },
+    {
+     "country": "United Kingdom",
+     "n": 192,
+     "pct": 12.4
+    },
+    {
+     "country": "France",
+     "n": 168,
+     "pct": 10.85
+    },
+    {
+     "country": "Russia",
+     "n": 106,
+     "pct": 6.85
+    },
+    {
+     "country": "Italy",
+     "n": 106,
+     "pct": 6.85
+    },
+    {
+     "country": "Poland",
+     "n": 53,
+     "pct": 3.42
+    },
+    {
+     "country": "Netherlands",
+     "n": 46,
+     "pct": 2.97
+    },
+    {
+     "country": "Turkey",
+     "n": 32,
+     "pct": 2.07
+    },
+    {
+     "country": "Austria",
+     "n": 28,
+     "pct": 1.81
+    },
+    {
+     "country": "Switzerland",
+     "n": 26,
+     "pct": 1.68
+    },
+    {
+     "country": "Ukraine",
+     "n": 24,
+     "pct": 1.55
+    }
+   ],
+   "n_countries": 73,
+   "occ": {
+    "space": {
+     "n": 40,
+     "pct": 2.48
+    },
+    "astro": {
+     "n": 837,
+     "pct": 51.96
+    },
+    "science": {
+     "n": 648,
+     "pct": 40.22
+    },
+    "arts": {
+     "n": 37,
+     "pct": 2.3
+    },
+    "explore": {
+     "n": 16,
+     "pct": 0.99
+    },
+    "thought": {
+     "n": 15,
+     "pct": 0.93
+    },
+    "other": {
+     "n": 18,
+     "pct": 1.12
+    }
+   },
+   "occ_unknown": 3,
+   "arts_any_pct": 24.6,
+   "born_median": 1838,
+   "born_known": 1605,
+   "cent": {
+    "-8": 1,
+    "-7": 4,
+    "-6": 5,
+    "-5": 16,
+    "-4": 21,
+    "-3": 8,
+    "-2": 5,
+    "-1": 9,
+    "1": 14,
+    "2": 5,
+    "3": 2,
+    "4": 6,
+    "5": 6,
+    "6": 1,
+    "7": 1,
+    "8": 4,
+    "9": 4,
+    "10": 7,
+    "11": 8,
+    "12": 2,
+    "13": 12,
+    "14": 9,
+    "15": 29,
+    "16": 98,
+    "17": 88,
+    "18": 257,
+    "19": 784,
+    "20": 199
+   },
+   "born_1800_pct": 61.25,
+   "born_before_1500": 178,
+   "ussr_pct": 10.47,
+   "famous": [
+    {
+     "name": "William Shakespeare",
+     "feature": "Shakespeare",
+     "sitelinks": 336
+    },
+    {
+     "name": "Albert Einstein",
+     "feature": "Einstein",
+     "sitelinks": 322
+    },
+    {
+     "name": "Aristotle",
+     "feature": "Aristoteles",
+     "sitelinks": 320
+    },
+    {
+     "name": "Leonardo da Vinci",
+     "feature": "Da Vinci",
+     "sitelinks": 307
+    },
+    {
+     "name": "Plato",
+     "feature": "Plato",
+     "sitelinks": 304
+    },
+    {
+     "name": "Isaac Newton",
+     "feature": "Newton",
+     "sitelinks": 303
+    },
+    {
+     "name": "Julius Caesar",
+     "feature": "Julius Caesar",
+     "sitelinks": 283
+    },
+    {
+     "name": "Charles Darwin",
+     "feature": "Darwin",
+     "sitelinks": 279
+    }
+   ],
+   "nonhuman": 265,
+   "far_features": 711,
+   "near_features": 1127
+  },
+  "mercury": {
+   "name": "Mercury",
+   "features": 522,
+   "human_features": 453,
+   "human_pct": 86.78,
+   "namings": 457,
+   "located": 426,
+   "people": 457,
+   "cont": {
+    "Europe": {
+     "n": 234,
+     "pct": 54.93
+    },
+    "North America": {
+     "n": 70,
+     "pct": 16.43
+    },
+    "Asia": {
+     "n": 84,
+     "pct": 19.72
+    },
+    "South America": {
+     "n": 15,
+     "pct": 3.52
+    },
+    "Africa": {
+     "n": 15,
+     "pct": 3.52
+    },
+    "Oceania": {
+     "n": 8,
+     "pct": 1.88
+    }
+   },
+   "europe_pct": 54.93,
+   "top": [
+    {
+     "country": "United States",
+     "n": 58,
+     "pct": 13.62
+    },
+    {
+     "country": "Italy",
+     "n": 36,
+     "pct": 8.45
+    },
+    {
+     "country": "France",
+     "n": 34,
+     "pct": 7.98
+    },
+    {
+     "country": "United Kingdom",
+     "n": 29,
+     "pct": 6.81
+    },
+    {
+     "country": "Russia",
+     "n": 23,
+     "pct": 5.4
+    },
+    {
+     "country": "Japan",
+     "n": 22,
+     "pct": 5.16
+    },
+    {
+     "country": "China",
+     "n": 18,
+     "pct": 4.23
+    },
+    {
+     "country": "Germany",
+     "n": 17,
+     "pct": 3.99
+    },
+    {
+     "country": "Spain",
+     "n": 13,
+     "pct": 3.05
+    },
+    {
+     "country": "Greece",
+     "n": 12,
+     "pct": 2.82
+    },
+    {
+     "country": "India",
+     "n": 9,
+     "pct": 2.11
+    },
+    {
+     "country": "Ukraine",
+     "n": 7,
+     "pct": 1.64
+    }
+   ],
+   "n_countries": 77,
+   "occ": {
+    "space": {
+     "n": 0,
+     "pct": 0.0
+    },
+    "astro": {
+     "n": 10,
+     "pct": 2.19
+    },
+    "science": {
+     "n": 33,
+     "pct": 7.24
+    },
+    "arts": {
+     "n": 409,
+     "pct": 89.69
+    },
+    "explore": {
+     "n": 0,
+     "pct": 0.0
+    },
+    "thought": {
+     "n": 2,
+     "pct": 0.44
+    },
+    "other": {
+     "n": 2,
+     "pct": 0.44
+    }
+   },
+   "occ_unknown": 1,
+   "arts_any_pct": 97.59,
+   "born_median": 1820,
+   "born_known": 450,
+   "cent": {
+    "-28": 1,
+    "-23": 1,
+    "-14": 1,
+    "-10": 1,
+    "-8": 1,
+    "-6": 1,
+    "-5": 7,
+    "-4": 5,
+    "-1": 3,
+    "1": 4,
+    "2": 1,
+    "5": 1,
+    "6": 3,
+    "7": 2,
+    "8": 7,
+    "9": 2,
+    "10": 5,
+    "11": 4,
+    "12": 9,
+    "13": 12,
+    "14": 12,
+    "15": 20,
+    "16": 27,
+    "17": 23,
+    "18": 45,
+    "19": 182,
+    "20": 70
+   },
+   "born_1800_pct": 56.0,
+   "born_before_1500": 103,
+   "ussr_pct": 9.62,
+   "famous": [
+    {
+     "name": "William Shakespeare",
+     "feature": "Shakespeare",
+     "sitelinks": 336
+    },
+    {
+     "name": "Leo Tolstoy",
+     "feature": "Tolstoj",
+     "sitelinks": 282
+    },
+    {
+     "name": "Johann Wolfgang von Goethe",
+     "feature": "Goethe Basin",
+     "sitelinks": 280
+    },
+    {
+     "name": "Ludwig van Beethoven",
+     "feature": "Beethoven",
+     "sitelinks": 274
+    },
+    {
+     "name": "Wolfgang Amadeus Mozart",
+     "feature": "Mozart",
+     "sitelinks": 274
+    },
+    {
+     "name": "Victor Hugo",
+     "feature": "Hugo",
+     "sitelinks": 269
+    },
+    {
+     "name": "Vincent van Gogh",
+     "feature": "van Gogh",
+     "sitelinks": 268
+    },
+    {
+     "name": "Pablo Picasso",
+     "feature": "Picasso",
+     "sitelinks": 265
+    }
+   ],
+   "nonhuman": 70
+  },
+  "venus": {
+   "name": "Venus",
+   "features": 518,
+   "human_features": 411,
+   "human_pct": 79.34,
+   "namings": 412,
+   "located": 384,
+   "people": 411,
+   "cont": {
+    "Europe": {
+     "n": 236,
+     "pct": 61.46
+    },
+    "North America": {
+     "n": 93,
+     "pct": 24.22
+    },
+    "Asia": {
+     "n": 39,
+     "pct": 10.16
+    },
+    "South America": {
+     "n": 3,
+     "pct": 0.78
+    },
+    "Africa": {
+     "n": 5,
+     "pct": 1.3
+    },
+    "Oceania": {
+     "n": 8,
+     "pct": 2.08
+    }
+   },
+   "europe_pct": 61.46,
+   "top": [
+    {
+     "country": "United States",
+     "n": 89,
+     "pct": 23.18
+    },
+    {
+     "country": "United Kingdom",
+     "n": 50,
+     "pct": 13.02
+    },
+    {
+     "country": "Russia",
+     "n": 37,
+     "pct": 9.64
+    },
+    {
+     "country": "France",
+     "n": 35,
+     "pct": 9.11
+    },
+    {
+     "country": "Italy",
+     "n": 19,
+     "pct": 4.95
+    },
+    {
+     "country": "China",
+     "n": 12,
+     "pct": 3.12
+    },
+    {
+     "country": "Germany",
+     "n": 11,
+     "pct": 2.86
+    },
+    {
+     "country": "Ukraine",
+     "n": 10,
+     "pct": 2.6
+    },
+    {
+     "country": "Spain",
+     "n": 9,
+     "pct": 2.34
+    },
+    {
+     "country": "Poland",
+     "n": 8,
+     "pct": 2.08
+    },
+    {
+     "country": "Greece",
+     "n": 8,
+     "pct": 2.08
+    },
+    {
+     "country": "Sweden",
+     "n": 8,
+     "pct": 2.08
+    }
+   ],
+   "n_countries": 52,
+   "occ": {
+    "space": {
+     "n": 0,
+     "pct": 0.0
+    },
+    "astro": {
+     "n": 20,
+     "pct": 4.94
+    },
+    "science": {
+     "n": 71,
+     "pct": 17.53
+    },
+    "arts": {
+     "n": 267,
+     "pct": 65.93
+    },
+    "explore": {
+     "n": 2,
+     "pct": 0.49
+    },
+    "thought": {
+     "n": 4,
+     "pct": 0.99
+    },
+    "other": {
+     "n": 41,
+     "pct": 10.12
+    }
+   },
+   "occ_unknown": 7,
+   "arts_any_pct": 73.06,
+   "born_median": 1852,
+   "born_known": 404,
+   "cent": {
+    "-27": 2,
+    "-24": 1,
+    "-16": 1,
+    "-8": 1,
+    "-7": 1,
+    "-5": 2,
+    "-4": 2,
+    "-3": 1,
+    "-2": 2,
+    "-1": 3,
+    "1": 2,
+    "2": 2,
+    "3": 1,
+    "5": 2,
+    "7": 1,
+    "8": 1,
+    "9": 1,
+    "10": 4,
+    "11": 3,
+    "12": 2,
+    "13": 5,
+    "14": 2,
+    "15": 6,
+    "16": 19,
+    "17": 16,
+    "18": 49,
+    "19": 216,
+    "20": 56
+   },
+   "born_1800_pct": 67.33,
+   "born_before_1500": 46,
+   "ussr_pct": 14.84,
+   "famous": [
+    {
+     "name": "Marlene Dietrich",
+     "feature": "Dietrich Patera",
+     "sitelinks": 204
+    },
+    {
+     "name": "Jane Austen",
+     "feature": "Austen",
+     "sitelinks": 204
+    },
+    {
+     "name": "Frida Kahlo",
+     "feature": "Kahlo",
+     "sitelinks": 200
+    },
+    {
+     "name": "Agatha Christie",
+     "feature": "Christie",
+     "sitelinks": 199
+    },
+    {
+     "name": "Sarah Bernhardt",
+     "feature": "Bernhardt",
+     "sitelinks": 195
+    },
+    {
+     "name": "Simone de Beauvoir",
+     "feature": "de Beauvoir",
+     "sitelinks": 189
+    },
+    {
+     "name": "Virginia Woolf",
+     "feature": "Woolf",
+     "sitelinks": 177
+    },
+    {
+     "name": "Cleopatra",
+     "feature": "Cleopatra Patera",
+     "sitelinks": 175
+    }
+   ],
+   "nonhuman": 107
+  },
+  "mars": {
+   "name": "Mars",
+   "features": 584,
+   "human_features": 234,
+   "human_pct": 40.07,
+   "namings": 235,
+   "located": 216,
+   "people": 231,
+   "cont": {
+    "Europe": {
+     "n": 140,
+     "pct": 64.81
+    },
+    "North America": {
+     "n": 62,
+     "pct": 28.7
+    },
+    "Asia": {
+     "n": 9,
+     "pct": 4.17
+    },
+    "South America": {
+     "n": 1,
+     "pct": 0.46
+    },
+    "Africa": {
+     "n": 2,
+     "pct": 0.93
+    },
+    "Oceania": {
+     "n": 2,
+     "pct": 0.93
+    }
+   },
+   "europe_pct": 64.81,
+   "top": [
+    {
+     "country": "United States",
+     "n": 61,
+     "pct": 28.24
+    },
+    {
+     "country": "United Kingdom",
+     "n": 33,
+     "pct": 15.28
+    },
+    {
+     "country": "France",
+     "n": 19,
+     "pct": 8.8
+    },
+    {
+     "country": "Russia",
+     "n": 16,
+     "pct": 7.41
+    },
+    {
+     "country": "Germany",
+     "n": 15,
+     "pct": 6.94
+    },
+    {
+     "country": "Italy",
+     "n": 13,
+     "pct": 6.02
+    },
+    {
+     "country": "Poland",
+     "n": 8,
+     "pct": 3.7
+    },
+    {
+     "country": "Netherlands",
+     "n": 6,
+     "pct": 2.78
+    },
+    {
+     "country": "India",
+     "n": 4,
+     "pct": 1.85
+    },
+    {
+     "country": "Sweden",
+     "n": 4,
+     "pct": 1.85
+    },
+    {
+     "country": "Turkey",
+     "n": 4,
+     "pct": 1.85
+    },
+    {
+     "country": "Hungary",
+     "n": 3,
+     "pct": 1.39
+    }
+   ],
+   "n_countries": 32,
+   "occ": {
+    "space": {
+     "n": 5,
+     "pct": 2.14
+    },
+    "astro": {
+     "n": 146,
+     "pct": 62.39
+    },
+    "science": {
+     "n": 73,
+     "pct": 31.2
+    },
+    "arts": {
+     "n": 3,
+     "pct": 1.28
+    },
+    "explore": {
+     "n": 3,
+     "pct": 1.28
+    },
+    "thought": {
+     "n": 2,
+     "pct": 0.85
+    },
+    "other": {
+     "n": 2,
+     "pct": 0.85
+    }
+   },
+   "occ_unknown": 1,
+   "arts_any_pct": 27.23,
+   "born_median": 1862,
+   "born_known": 233,
+   "cent": {
+    "-5": 1,
+    "-2": 1,
+    "-1": 1,
+    "1": 1,
+    "6": 1,
+    "10": 1,
+    "15": 4,
+    "16": 3,
+    "17": 12,
+    "18": 18,
+    "19": 126,
+    "20": 64
+   },
+   "born_1800_pct": 81.55,
+   "born_before_1500": 10,
+   "ussr_pct": 9.72,
+   "famous": [
+    {
+     "name": "Leonardo da Vinci",
+     "feature": "Da Vinci",
+     "sitelinks": 307
+    },
+    {
+     "name": "Isaac Newton",
+     "feature": "Newton",
+     "sitelinks": 303
+    },
+    {
+     "name": "Charles Darwin",
+     "feature": "Darwin",
+     "sitelinks": 279
+    },
+    {
+     "name": "Galileo Galilei",
+     "feature": "Galilaei",
+     "sitelinks": 271
+    },
+    {
+     "name": "Marie Curie",
+     "feature": "Sklodowska",
+     "sitelinks": 248
+    },
+    {
+     "name": "Christopher Columbus",
+     "feature": "Columbus",
+     "sitelinks": 244
+    },
+    {
+     "name": "Nicolaus Copernicus",
+     "feature": "Copernicus",
+     "sitelinks": 214
+    },
+    {
+     "name": "Louis Pasteur",
+     "feature": "Pasteur",
+     "sitelinks": 213
+    }
+   ],
+   "nonhuman": 350
+  }
+ },
+ "all": {
+  "namings": 2718,
+  "located": 2574,
+  "europe_pct": 68.96,
+  "n_countries": 104
+ },
+ "moon": {
+  "south_n": 31,
+  "africa_n": 19,
+  "sam_n": 6,
+  "oce_n": 6,
+  "asia_n": 102,
+  "paris_n": 38,
+  "egypt_n": 12,
+  "alex_n": 9,
+  "europe_n": 1165,
+  "na_n": 250,
+  "de_fr_uk_n": 562,
+  "de_fr_uk_pct": 36.3,
+  "china_n": 15,
+  "india_n": 10,
+  "japan_n": 9,
+  "asia_pre1500": 58,
+  "turkey_n": 32,
+  "asia_top": "Turkey"
+ },
+ "far": {
+  "near": {
+   "namings": 934,
+   "located": 889,
+   "ussr_n": 31,
+   "ussr_pct": 3.49,
+   "europe_pct": 78.97,
+   "us_pct": 11.47,
+   "born_median": 1784,
+   "born_1800_pct": 42.55,
+   "astro_pct": 58.886509635974306,
+   "science_pct": 33.29764453961456,
+   "space_n": 4,
+   "space_people": 4,
+   "russia_n": 21
+  },
+  "far": {
+   "namings": 678,
+   "located": 657,
+   "ussr_n": 131,
+   "ussr_pct": 19.94,
+   "europe_pct": 70.17,
+   "us_pct": 20.09,
+   "born_median": 1874,
+   "born_1800_pct": 86.71,
+   "astro_pct": 42.33038348082596,
+   "science_pct": 49.41002949852507,
+   "space_n": 36,
+   "space_people": 35,
+   "russia_n": 85
+  },
+  "near_1in": 29,
+  "far_1in": 5,
+  "ussr_ratio": 5.7,
+  "far_ussr_names": [
+   "Yuri Gagarin",
+   "Avicenna",
+   "Dmitri Mendeleev",
+   "David Hilbert",
+   "Valentina Tereshkova",
+   "Ivan Pavlov",
+   "Georg Cantor",
+   "Al-Biruni"
+  ],
+  "far_space": [
+   "Yuri Gagarin",
+   "Valentina Tereshkova",
+   "Alexey Leonov",
+   "Kalpana Chawla",
+   "Jim Lovell",
+   "Vladimir Komarov",
+   "Frank Borman",
+   "Gherman Titov",
+   "Bill Anders",
+   "Bill Anders",
+   "Christa McAuliffe",
+   "Gus Grissom",
+   "Ilan Ramon",
+   "Judith Resnik",
+   "Andriyan Nikolayev",
+   "Ed White",
+   "Laurel Clark",
+   "Roger Bruce Chaffee",
+   "Ronald McNair",
+   "William C. McCool",
+   "Rick Husband",
+   "Konstantin Feoktistov",
+   "David M. Brown",
+   "Michael P. Anderson",
+   "Pavel Ivanovich Belyayev",
+   "Vladimir Shatalov",
+   "Dick Scobee",
+   "Gregory Jarvis",
+   "Michael J. Smith",
+   "Vladislav Volkov",
+   "Georgy Dobrovolsky",
+   "Ellison Onizuka",
+   "Viktor Patsayev",
+   "Valentin Bondarenko",
+   "Joseph Albert Walker",
+   "Andrei Grachev"
+  ]
+ },
+ "towns": [
+  {
+   "place": "Paris",
+   "country": "France",
+   "n": 69,
+   "moon": 38,
+   "people": 64,
+   "mercury": 10,
+   "venus": 16,
+   "mars": 5
+  },
+  {
+   "place": "London",
+   "country": "United Kingdom",
+   "n": 40,
+   "moon": 22,
+   "people": 36,
+   "mercury": 3,
+   "venus": 9,
+   "mars": 6
+  },
+  {
+   "place": "Saint Petersburg",
+   "country": "Russia",
+   "n": 37,
+   "moon": 18,
+   "people": 35,
+   "mercury": 4,
+   "venus": 13,
+   "mars": 2
+  },
+  {
+   "place": "Moscow",
+   "country": "Russia",
+   "n": 29,
+   "moon": 16,
+   "people": 28,
+   "mercury": 4,
+   "venus": 7,
+   "mars": 2
+  },
+  {
+   "place": "Berlin",
+   "country": "Germany",
+   "n": 18,
+   "moon": 13,
+   "people": 15,
+   "mercury": 0,
+   "venus": 1,
+   "mars": 4
+  },
+  {
+   "place": "New York City",
+   "country": "United States",
+   "n": 17,
+   "moon": 8,
+   "people": 16,
+   "mercury": 3,
+   "venus": 4,
+   "mars": 2
+  },
+  {
+   "place": "Vienna",
+   "country": "Austria",
+   "n": 16,
+   "moon": 12,
+   "people": 15,
+   "mercury": 1,
+   "venus": 3,
+   "mars": 0
+  },
+  {
+   "place": "Boston",
+   "country": "United States",
+   "n": 14,
+   "moon": 10,
+   "people": 13,
+   "mercury": 3,
+   "venus": 0,
+   "mars": 1
+  },
+  {
+   "place": "Edinburgh",
+   "country": "United Kingdom",
+   "n": 13,
+   "moon": 9,
+   "people": 11,
+   "mercury": 1,
+   "venus": 2,
+   "mars": 1
+  },
+  {
+   "place": "Chicago",
+   "country": "United States",
+   "n": 13,
+   "moon": 6,
+   "people": 11,
+   "mercury": 1,
+   "venus": 1,
+   "mars": 5
+  },
+  {
+   "place": "Florence",
+   "country": "Italy",
+   "n": 13,
+   "moon": 5,
+   "people": 13,
+   "mercury": 4,
+   "venus": 3,
+   "mars": 1
+  },
+  {
+   "place": "Rome",
+   "country": "Italy",
+   "n": 12,
+   "moon": 8,
+   "people": 11,
+   "mercury": 1,
+   "venus": 3,
+   "mars": 0
+  },
+  {
+   "place": "Alexandria",
+   "country": "Egypt",
+   "n": 11,
+   "moon": 9,
+   "people": 10,
+   "mercury": 0,
+   "venus": 2,
+   "mars": 0
+  },
+  {
+   "place": "Bologna",
+   "country": "Italy",
+   "n": 11,
+   "moon": 8,
+   "people": 11,
+   "mercury": 0,
+   "venus": 3,
+   "mars": 0
+  },
+  {
+   "place": "Odesa",
+   "country": "Ukraine",
+   "n": 10,
+   "moon": 8,
+   "people": 10,
+   "mercury": 0,
+   "venus": 2,
+   "mars": 0
+  }
+ ],
+ "towns_moon": [
+  {
+   "place": "Paris",
+   "country": "France",
+   "moon": 38
+  },
+  {
+   "place": "London",
+   "country": "United Kingdom",
+   "moon": 22
+  },
+  {
+   "place": "Saint Petersburg",
+   "country": "Russia",
+   "moon": 18
+  },
+  {
+   "place": "Moscow",
+   "country": "Russia",
+   "moon": 16
+  },
+  {
+   "place": "Berlin",
+   "country": "Germany",
+   "moon": 13
+  },
+  {
+   "place": "Vienna",
+   "country": "Austria",
+   "moon": 12
+  },
+  {
+   "place": "Boston",
+   "country": "United States",
+   "moon": 10
+  },
+  {
+   "place": "Edinburgh",
+   "country": "United Kingdom",
+   "moon": 9
+  },
+  {
+   "place": "Alexandria",
+   "country": "Egypt",
+   "moon": 9
+  },
+  {
+   "place": "New York City",
+   "country": "United States",
+   "moon": 8
+  },
+  {
+   "place": "Rome",
+   "country": "Italy",
+   "moon": 8
+  },
+  {
+   "place": "Bologna",
+   "country": "Italy",
+   "moon": 8
+  }
+ ],
+ "n_birthplaces": 1661,
+ "n_birthplaces_moon": 1103,
+ "paris_names_moon": [
+  "Pierre Curie",
+  "Antoine Lavoisier",
+  "Jean Le Rond d'Alembert",
+  "Antoine Henri Becquerel",
+  "Augustin-Louis Cauchy",
+  "Henri Moissan"
+ ],
+ "one_town_two_worlds": 227,
+ "multi": {
+  "two_plus": 135,
+  "three": [
+   "Giovanni Schiaparelli",
+   "Gerard Kuiper",
+   "E. M. Antoniadi"
+  ],
+  "moon_mars": 124
+ },
+ "mercury": {
+  "arts_any_pct": 97.59,
+  "asia_pct": 19.72,
+  "japan_n": 22,
+  "china_n": 18
+ },
+ "venus": {
+  "us_pct": 23.18,
+  "top": "United States"
+ },
+ "mars_places": {
+  "nonhuman": 350,
+  "pct": 59.93
+ },
+ "women": {
+  "moon": {
+   "n": 1614,
+   "women": 45,
+   "pct": 2.79
+  },
+  "mercury": {
+   "n": 456,
+   "women": 81,
+   "pct": 17.76
+  },
+  "venus": {
+   "n": 412,
+   "women": 411,
+   "pct": 99.76
+  },
+  "mars": {
+   "n": 235,
+   "women": 13,
+   "pct": 5.53
+  },
+  "three": {
+   "n": 2305,
+   "women": 139,
+   "pct": 6.03
+  },
+  "venus_men": [
+   "James Clerk Maxwell"
+  ],
+  "no_sex": 0,
+  "other_sex": 1,
+  "by_birth": {
+   "moon": [
+    {
+     "label": "before 1800",
+     "n": 611,
+     "women": 6,
+     "pct": 0.98
+    },
+    {
+     "label": "1800s",
+     "n": 786,
+     "women": 17,
+     "pct": 2.16
+    },
+    {
+     "label": "1900 to 1939",
+     "n": 181,
+     "women": 13,
+     "pct": 7.18
+    },
+    {
+     "label": "1940 or later",
+     "n": 27,
+     "women": 9,
+     "pct": 33.33
+    }
+   ],
+   "mercury": [
+    {
+     "label": "before 1800",
+     "n": 198,
+     "women": 15,
+     "pct": 7.58
+    },
+    {
+     "label": "1800s",
+     "n": 177,
+     "women": 33,
+     "pct": 18.64
+    },
+    {
+     "label": "1900 to 1939",
+     "n": 70,
+     "women": 30,
+     "pct": 42.86
+    },
+    {
+     "label": "1940 or later",
+     "n": 4,
+     "women": 2,
+     "pct": 50.0
+    }
+   ],
+   "mars": [
+    {
+     "label": "before 1800",
+     "n": 42,
+     "women": 1,
+     "pct": 2.38
+    },
+    {
+     "label": "1800s",
+     "n": 126,
+     "women": 2,
+     "pct": 1.59
+    },
+    {
+     "label": "1900 to 1939",
+     "n": 54,
+     "women": 8,
+     "pct": 14.81
+    },
+    {
+     "label": "1940 or later",
+     "n": 11,
+     "women": 2,
+     "pct": 18.18
+    }
+   ]
+  },
+  "by_birth_three": [
+   {
+    "label": "before 1800",
+    "n": 851,
+    "women": 22,
+    "pct": 2.59
+   },
+   {
+    "label": "1800s",
+    "n": 1089,
+    "women": 52,
+    "pct": 4.78
+   },
+   {
+    "label": "1900 to 1939",
+    "n": 305,
+    "women": 51,
+    "pct": 16.72
+   },
+   {
+    "label": "1940 or later",
+    "n": 42,
+    "women": 13,
+    "pct": 30.95
+   }
+  ],
+  "far": {
+   "n": 678,
+   "women": 22,
+   "pct": 3.24
+  },
+  "near": {
+   "n": 934,
+   "women": 23,
+   "pct": 2.46
+  },
+  "moon_women_examples": [
+   "Marie Curie",
+   "Valentina Tereshkova",
+   "Hildegard of Bingen",
+   "Hypatia",
+   "Rita Levi-Montalcini",
+   "Maryam Mirzakhani",
+   "Lise Meitner",
+   "Emmy Noether"
+  ]
+ },
+ "mars_towns": {
+  "n": 280,
+  "features": 279,
+  "towns": 217,
+  "countries": 102,
+  "top": [
+   {
+    "country": "United States",
+    "n": 31
+   },
+   {
+    "country": "India",
+    "n": 17
+   },
+   {
+    "country": "China",
+    "n": 16
+   },
+   {
+    "country": "Canada",
+    "n": 12
+   },
+   {
+    "country": "Russia",
+    "n": 9
+   },
+   {
+    "country": "Spain",
+    "n": 7
+   },
+   {
+    "country": "Greece",
+    "n": 6
+   },
+   {
+    "country": "Australia",
+    "n": 6
+   }
+  ],
+  "europe_pct": 30.38,
+  "asia_pct": 29.62,
+  "africa_pct": 10.77,
+  "sam_pct": 5.77,
+  "cont": {
+   "Europe": 79,
+   "North America": 53,
+   "Asia": 77,
+   "South America": 15,
+   "Africa": 28,
+   "Oceania": 8
+  },
+  "nonhuman_pct": 79.71,
+  "uk": [
+   "Glenelg",
+   "Maidstone",
+   "Crewe",
+   "Corby",
+   "Kilkhampton",
+   "Porth"
+  ]
+ },
+ "moon_earth_places": [
+  "Altai Mountains",
+  "Mount Heng",
+  "Mount Hua",
+  "Mount Song",
+  "American Cordillera",
+  "Moscow",
+  "Tenerife",
+  "Alps",
+  "Apennines",
+  "Mount Erciyes",
+  "Mont Blanc",
+  "Carpathians",
+  "Caucasus Mountains",
+  "Haemus Mons",
+  "Jura Mountains",
+  "Pyrenees",
+  "Svalbard",
+  "Taurus Mountains",
+  "Mount Tai",
+  "Jamestown"
+ ],
+ "moon_earth_n": 20,
+ "overrides": 54,
+ "overrides_bp": 18,
+ "overrides_sex": 2,
+ "overrides_unk": 31,
+ "overrides_link": 3,
+ "audit_n": 40,
+ "audit_faults": 1,
+ "overrides_places": 10,
+ "overrides_labels": 41,
+ "occ_names": {
+  "space": "Astronauts and cosmonauts",
+  "astro": "Astronomers",
+  "science": "Other scientists, mathematicians and engineers",
+  "arts": "Writers, artists and musicians",
+  "explore": "Explorers, navigators and aviators",
+  "thought": "Philosophers, scholars and religious figures",
+  "other": "Rulers, politicians and others"
+ },
+ "occ_cols": {
+  "space": "#2F5FA7",
+  "astro": "#1F2F4D",
+  "science": "#2E9A8C",
+  "arts": "#C8322B",
+  "explore": "#E0A11B",
+  "thought": "#7B57A8",
+  "other": "#8C8478"
+ },
+ "checks": {
+  "moon_europe_gt_70": true,
+  "mercury_most_diverse": true
+ }
+}
