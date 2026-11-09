@@ -353,7 +353,7 @@ function townTable() {
 let PLC = [], PLF = {};
 let SITE = null, P = [], F = [], PLACES = null, emap = null, bmap = null, eReady = false, bReady = false;
 const S = { body: "moon", col: "cont", fsel: null, psel: null, all: false };
-const LYDEF = { imagery: false, grat: true, names: true, nonhuman: true, sides: true, ebirth: true, etowns: true, modern: false, mountains: true, forests: true, names_e: true, borders: true, rivers: true };
+const LYDEF = { imagery: false, grat: true, names: true, nonhuman: true, sides: true, ebirth: true, etowns: true, modern: true, mountains: true, forests: true, names_e: true, borders: true, rivers: true };
 const LY = { ...LYDEF };
 try { Object.assign(LY, JSON.parse(localStorage.getItem("mn_layers") || "{}")); } catch (e) {}
 const saveLY = () => { try { localStorage.setItem("mn_layers", JSON.stringify(LY)); } catch (e) {} };
